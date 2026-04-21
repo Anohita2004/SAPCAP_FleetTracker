@@ -1,0 +1,63 @@
+<mvc:View
+  controllerName="com.locationtracker.locationtracker.controller.App"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  displayBlock="true">
+  <App id="app">
+    <pages>
+      <Page title="Live Location Tracker">
+        <content>
+          <VBox class="trackerPage">
+            <HBox class="toolbarRow" wrap="Wrap" justifyContent="SpaceBetween" alignItems="Center">
+              <VBox>
+                <Title text="Track your path live" level="H2" />
+                <Text text="{view>/statusText}" />
+                <Text text="{view>/permissionText}" />
+              </VBox>
+              <HBox wrap="Wrap" class="buttonCluster">
+                <Button text="Start Trip" type="Emphasized" press=".onStartTracking" visible="{= !${view>/tracking} }" />
+                <Button text="Stop Trip" type="Reject" press=".onStopTracking" visible="{view>/tracking}" />
+                <Button text="Refresh Path" press=".onRefreshPath" />
+              </HBox>
+            </HBox>
+
+            <HBox wrap="Wrap" class="cardRow">
+              <Panel headerText="Current Trip" class="metricCard">
+                <content>
+                  <VBox class="metricContent">
+                    <ObjectStatus title="Title" text="{= ${view>/currentTrip/title} || 'No active trip'}" />
+                    <ObjectStatus title="Status" text="{= ${view>/currentTrip/status} || 'IDLE'}" />
+                    <ObjectStatus title="Started" text="{= ${view>/currentTrip/startedAt} || '-'}" />
+                  </VBox>
+                </content>
+              </Panel>
+
+              <Panel headerText="Live Position" class="metricCard">
+                <content>
+                  <VBox class="metricContent">
+                    <ObjectStatus title="Latitude" text="{= ${view>/lastPoint/latitude} || '-'}" />
+                    <ObjectStatus title="Longitude" text="{= ${view>/lastPoint/longitude} || '-'}" />
+                    <ObjectStatus title="Accuracy (m)" text="{= ${view>/lastPoint/accuracy} || '-'}" />
+                  </VBox>
+                </content>
+              </Panel>
+
+              <Panel headerText="Captured Points" class="metricCard">
+                <content>
+                  <VBox class="metricContent">
+                    <ObjectNumber number="{view>/totalPoints}" unit="pts" />
+                  </VBox>
+                </content>
+              </Panel>
+            </HBox>
+
+            <VBox class="mapShell">
+              <core:HTML content='&lt;div id="tracker-map" class="trackerMap"&gt;&lt;/div&gt;' />
+            </VBox>
+          </VBox>
+        </content>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>
