@@ -9,7 +9,7 @@
     "watch-locationtracker": "cds watch --open com.locationtracker.locationtracker/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "dependencies": {
-    "@cap-js/hana": "^1",
+    "@cap-js/hana": "^2",
     "@sap/cds": "^8",
     "express": "^4"
   },
@@ -33,6 +33,11 @@
             "url": "db/location-tracker.sqlite"
           }
         },
+        "[hybrid]": {
+          "kind": "hana",
+          "impl": "@cap-js/hana",
+          "deploy-format": "hdbtable"
+        },
         "[production]": {
           "kind": "hana",
           "impl": "@cap-js/hana",
@@ -45,3 +50,4 @@
     "app/*"
   ]
 }
+
