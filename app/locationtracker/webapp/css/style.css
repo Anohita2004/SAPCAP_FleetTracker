@@ -1,1 +1,50 @@
 /* Enter your custom styles here */
+.trackerPage {
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.toolbarRow {
+  gap: 1rem;
+  background: linear-gradient(135deg, #f5f9ff 0%, #eef7f2 100%);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+}
+
+.buttonCluster {
+  gap: 0.75rem;
+}
+
+.cardRow {
+  gap: 1rem;
+  width: 100%;
+}
+
+.metricCard {
+  min-width: 16rem;
+  flex: 1 1 18rem;
+}
+
+.metricContent {
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.mapShell {
+  margin-top: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid #d9e5f2;
+  width: 100%;
+  min-height: 28rem;
+  background: #f8fbff;
+}
+
+.trackerMap {
+  width: 100%;
+  height: 28rem;
+  min-height: 28rem;
+  display: block;
+}

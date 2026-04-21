@@ -15,10 +15,16 @@ sap.ui.define([
       this._viewModel = this.getOwnerComponent().getModel("view");
 
       this.getView().addEventDelegate({
-        onAfterShow: this._ensureMap.bind(this)
+        onAfterShow: function () {
+          this._ensureMap();
+        }.bind(this)
       });
 
       this._loadActiveTrip();
+    },
+
+    onAfterRendering: function () {
+      this._ensureMap();
     },
 
     onStartTracking: async function () {
@@ -32,7 +38,7 @@ sap.ui.define([
 
         if (!trip || trip.status !== "ACTIVE") {
           trip = await this._post("/tracker/startTrip", {
-            title: `Trip ${new Date().toLocaleString()}`
+            title: "Trip " + new Date().toLocaleString()
           });
           this._viewModel.setProperty("/currentTrip", trip);
           this._points = [];
@@ -84,12 +90,17 @@ sap.ui.define([
 
     onRefreshPath: async function () {
       const trip = this._viewModel.getProperty("/currentTrip");
+      this._ensureMap();
+
       if (!trip || !trip.ID) {
+        if (this._map) {
+          this._map.invalidateSize();
+        }
         return;
       }
 
       try {
-        const points = await this._get(`/tracker/path/${trip.ID}`);
+        const points = await this._get("/tracker/path/" + trip.ID);
         this._points = (points.value || []).map(function (point) {
           return [Number(point.latitude), Number(point.longitude)];
         });
@@ -110,6 +121,8 @@ sap.ui.define([
           this._viewModel.setProperty("/currentTrip", trip);
           this._viewModel.setProperty("/statusText", "Active trip restored");
           await this.onRefreshPath();
+        } else {
+          this._viewModel.setProperty("/statusText", "Backend reachable, no active trip loaded");
         }
       } catch (error) {
         this._viewModel.setProperty("/statusText", "Backend reachable, no active trip loaded");
@@ -117,39 +130,41 @@ sap.ui.define([
     },
 
     _onPositionSuccess: async function (position) {
-      const trip = this._viewModel.getProperty("/currentTrip");
-      if (!trip || !trip.ID) {
-        return;
-      }
+  const trip = this._viewModel.getProperty("/currentTrip");
+  if (!trip || !trip.ID) {
+    return;
+  }
 
-      const payload = {
-        tripId: trip.ID,
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude,
-        accuracy: position.coords.accuracy,
-        altitude: position.coords.altitude,
-        speed: position.coords.speed,
-        heading: position.coords.heading,
-        recordedAt: new Date(position.timestamp).toISOString(),
-        source: "browser-geolocation"
-      };
+  const payload = {
+    tripId: trip.ID,
+    latitude: Number(position.coords.latitude.toFixed(6)),
+    longitude: Number(position.coords.longitude.toFixed(6)),
+    accuracy: position.coords.accuracy != null ? Number(position.coords.accuracy.toFixed(2)) : null,
+    altitude: position.coords.altitude != null ? Number(position.coords.altitude.toFixed(2)) : null,
+    speed: position.coords.speed != null ? Number(position.coords.speed.toFixed(2)) : null,
+    heading: position.coords.heading != null ? Number(position.coords.heading.toFixed(2)) : null,
+    recordedAt: new Date(position.timestamp).toISOString(),
+    source: "browser-geolocation"
+  };
 
-      try {
-        const point = await this._post("/tracker/recordLocation", payload);
-        const latLng = [Number(point.latitude), Number(point.longitude)];
-        this._points.push(latLng);
-        this._viewModel.setProperty("/lastPoint", point);
-        this._viewModel.setProperty("/totalPoints", this._points.length);
-        this._viewModel.setProperty("/statusText", "Tracking is live");
-        this._syncPolyline(latLng);
-      } catch (error) {
-        MessageBox.error(error.message || "Unable to persist the current position.");
-      }
-    },
+  try {
+    const point = await this._post("/tracker/recordLocation", payload);
+    const latLng = [Number(point.latitude), Number(point.longitude)];
+    this._points.push(latLng);
+    this._viewModel.setProperty("/lastPoint", point);
+    this._viewModel.setProperty("/totalPoints", this._points.length);
+    this._viewModel.setProperty("/statusText", "Tracking is live");
+    this._syncPolyline(latLng);
+  } catch (error) {
+    MessageBox.error(error.message || "Unable to persist the current position.");
+  }
+},
+
 
     _onPositionError: function (error) {
       this._viewModel.setProperty("/permissionText", error.message || "Location permission denied");
       this._viewModel.setProperty("/tracking", false);
+
       if (this._watchId !== null) {
         navigator.geolocation.clearWatch(this._watchId);
         this._watchId = null;
@@ -157,33 +172,55 @@ sap.ui.define([
     },
 
     _ensureMap: function () {
-      if (this._map || !window.L) {
-        return;
-      }
-
       const mapContainer = document.getElementById("tracker-map");
+
       if (!mapContainer) {
+        this._viewModel.setProperty("/statusText", "Map container not found");
         return;
       }
 
-      this._map = window.L.map(mapContainer).setView([20.5937, 78.9629], 5);
-      window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19,
-        attribution: "&copy; OpenStreetMap contributors"
-      }).addTo(this._map);
+      if (!window.L) {
+        this._viewModel.setProperty("/statusText", "Leaflet failed to load");
+        return;
+      }
 
-      this._polyline = window.L.polyline([], {
-        color: "#0a6ed1",
-        weight: 5
-      }).addTo(this._map);
+      if (this._map) {
+        setTimeout(function () {
+          this._map.invalidateSize();
+        }.bind(this), 150);
+        return;
+      }
 
-      setTimeout(function () {
-        this._map.invalidateSize();
-      }.bind(this), 0);
+      try {
+        this._map = window.L.map(mapContainer, {
+          zoomControl: true
+        }).setView([20.5937, 78.9629], 5);
+
+        window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 19,
+          attribution: "&copy; OpenStreetMap contributors"
+        }).addTo(this._map);
+
+        this._polyline = window.L.polyline([], {
+          color: "#0a6ed1",
+          weight: 5
+        }).addTo(this._map);
+
+        this._viewModel.setProperty("/statusText", "Map ready");
+
+        setTimeout(function () {
+          if (this._map) {
+            this._map.invalidateSize();
+          }
+        }.bind(this), 250);
+      } catch (error) {
+        this._viewModel.setProperty("/statusText", "Map initialization failed");
+      }
     },
 
     _syncPolyline: function (latestPoint) {
       this._ensureMap();
+
       if (!this._map || !this._polyline) {
         return;
       }
@@ -196,10 +233,28 @@ sap.ui.define([
         } else {
           this._marker.setLatLng(latestPoint);
         }
+
         this._map.setView(latestPoint, 18);
-      } else if (this._points.length) {
-        this._map.fitBounds(this._polyline.getBounds(), { padding: [20, 20] });
+        return;
       }
+
+      if (this._points.length > 1) {
+        this._map.fitBounds(this._polyline.getBounds(), { padding: [20, 20] });
+      } else if (this._points.length === 1) {
+        if (!this._marker) {
+          this._marker = window.L.marker(this._points[0]).addTo(this._map);
+        } else {
+          this._marker.setLatLng(this._points[0]);
+        }
+
+        this._map.setView(this._points[0], 18);
+      }
+
+      setTimeout(function () {
+        if (this._map) {
+          this._map.invalidateSize();
+        }
+      }.bind(this), 150);
     },
 
     _get: async function (url) {
