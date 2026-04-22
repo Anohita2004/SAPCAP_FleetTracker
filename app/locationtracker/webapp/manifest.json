@@ -75,20 +75,27 @@
           "name": "RouteApp",
           "pattern": "",
           "target": "TargetApp"
+        },
+        {
+          "name": "RouteTrips",
+          "pattern": "trips",
+          "target": "TargetTrips"
         }
       ],
       "targets": {
         "TargetApp": {
           "viewName": "App"
+        },
+        "TargetTrips": {
+          "viewName": "Trips"
         }
       }
     },
     "rootView": {
-      "viewName": "com.locationtracker.locationtracker.view.App",
+      "viewName": "com.locationtracker.locationtracker.view.Root",
       "type": "XML",
-      "id": "app",
+      "id": "root",
       "async": true
     }
   }
 }
-

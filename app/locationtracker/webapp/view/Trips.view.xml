@@ -1,6 +1,192 @@
-<mvc:View controllerName="com.locationtracker.locationtracker.controller.Trips"
+<mvc:View
+    controllerName="com.locationtracker.locationtracker.controller.Trips"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form">
+    <Page
+        id="tripsPage"
+        title="Fleet Trips Overview"
+        showNavButton="true"
+        navButtonPress=".onNavBack">
+        <content>
+            <VBox class="tripsPage" renderType="Bare">
+                <HBox class="tripsHero" wrap="Wrap" justifyContent="SpaceBetween" alignItems="Center">
+                    <VBox class="tripsHeroCopy">
+                        <Title text="Trip Command Center" level="H2" />
+                        <Text text="Monitor active movement, review completed routes, and inspect the latest recorded coordinates from one place." />
+                    </VBox>
+                    <HBox class="tripsHeroActions" wrap="Wrap">
+                        <Button text="Refresh Trips" type="Emphasized" icon="sap-icon://refresh" press=".onRefreshTrips" />
+                        <Button text="Jump To Active Trip" icon="sap-icon://locate-me" press=".onFocusActiveTrip" />
+                    </HBox>
+                </HBox>
+
+                <HBox class="tripsStatsRow" wrap="Wrap">
+                    <VBox class="tripStatCard">
+                        <Text text="Total Trips" class="tripStatLabel" />
+                        <ObjectNumber number="{trips>/summary/totalTrips}" />
+                        <Text text="Routes captured across your fleet tracker." class="tripStatHint" />
+                    </VBox>
+                    <VBox class="tripStatCard tripStatCardAccent">
+                        <Text text="Active Trips" class="tripStatLabel" />
+                        <ObjectNumber number="{trips>/summary/activeTrips}" state="Success" />
+                        <Text text="Journeys currently reporting live positions." class="tripStatHint" />
+                    </VBox>
+                    <VBox class="tripStatCard">
+                        <Text text="Completed Trips" class="tripStatLabel" />
+                        <ObjectNumber number="{trips>/summary/completedTrips}" />
+                        <Text text="Finished journeys available for review." class="tripStatHint" />
+                    </VBox>
+                    <VBox class="tripStatCard">
+                        <Text text="Location Points" class="tripStatLabel" />
+                        <ObjectNumber number="{trips>/summary/totalPoints}" />
+                        <Text text="Total points recorded from all displayed trips." class="tripStatHint" />
+                    </VBox>
+                </HBox>
+
+                <Toolbar class="tripsToolbar">
+                    <Title text="Trips" level="H4" />
+                    <ToolbarSpacer />
+                    <SearchField
+                        width="20rem"
+                        placeholder="Search by title or status"
+                        liveChange=".onSearchTrips" />
+                    <SegmentedButton selectedKey="{trips>/statusFilter}" selectionChange=".onFilterStatus">
+                        <items>
+                            <SegmentedButtonItem key="ALL" text="All" />
+                            <SegmentedButtonItem key="ACTIVE" text="Active" />
+                            <SegmentedButtonItem key="COMPLETED" text="Completed" />
+                            <SegmentedButtonItem key="PAUSED" text="Paused" />
+                        </items>
+                    </SegmentedButton>
+                </Toolbar>
+
+                <HBox class="tripsContentRow" wrap="Wrap">
+                    <VBox class="tripsListPanel">
+                        <List
+                            id="tripList"
+                            class="tripList"
+                            mode="SingleSelectMaster"
+                            growing="true"
+                            growingScrollToLoad="true"
+                            busy="{trips>/loading}"
+                            items="{trips>/filteredTrips}"
+                            selectionChange=".onTripSelectionChange"
+                            noDataText="No trips match the current filters.">
+                            <CustomListItem>
+                                <HBox class="tripListItem" justifyContent="SpaceBetween" wrap="Wrap">
+                                    <VBox class="tripListCopy">
+                                        <HBox alignItems="Center" class="tripListTitleRow">
+                                            <Title text="{trips>title}" level="H5" />
+                                            <ObjectStatus
+                                                text="{trips>status}"
+                                                state="{trips>statusState}"
+                                                class="tripStatusBadge" />
+                                        </HBox>
+                                        <Text text="{trips>summaryLine}" class="tripMetaText" />
+                                        <Text text="{trips>locationLine}" class="tripMetaText" />
+                                    </VBox>
+                                    <VBox class="tripListMetrics" alignItems="End">
+                                        <ObjectNumber number="{trips>pointCount}" unit="pts" />
+                                        <Text text="{trips>durationText}" class="tripMetaText" />
+                                    </VBox>
+                                </HBox>
+                            </CustomListItem>
+                        </List>
+                    </VBox>
+
+                    <VBox class="tripDetailPanel">
+                        <Panel headerText="Selected Trip Snapshot" class="tripDetailCard">
+                            <content>
+                                <VBox
+                                    class="tripDetailEmpty"
+                                    visible="{= !${trips>/selectedTrip/title} }">
+                                    <IllustratedMessage
+                                        illustrationType="sapIllus-SimpleCheckMark"
+                                        title="Select a trip"
+                                        description="Choose a trip from the list to inspect route timing, status, and recent position details." />
+                                </VBox>
+
+                                <VBox
+                                    class="tripDetailContent"
+                                    visible="{= !!${trips>/selectedTrip/title} }">
+                                    <HBox justifyContent="SpaceBetween" wrap="Wrap" class="tripDetailHeader">
+                                        <VBox>
+                                            <Title text="{trips>/selectedTrip/title}" level="H3" />
+                                            <Text text="{trips>/selectedTrip/statusNarrative}" class="tripMetaText" />
+                                        </VBox>
+                                        <ObjectStatus
+                                            text="{trips>/selectedTrip/status}"
+                                            state="{trips>/selectedTrip/statusState}" />
+                                    </HBox>
+
+                                    <HBox class="tripInsightGrid" wrap="Wrap">
+                                        <VBox class="tripInsightPill">
+                                            <Text text="Started" class="tripStatLabel" />
+                                            <Text text="{trips>/selectedTrip/startedDisplay}" />
+                                        </VBox>
+                                        <VBox class="tripInsightPill">
+                                            <Text text="Ended" class="tripStatLabel" />
+                                            <Text text="{trips>/selectedTrip/endedDisplay}" />
+                                        </VBox>
+                                        <VBox class="tripInsightPill">
+                                            <Text text="Duration" class="tripStatLabel" />
+                                            <Text text="{trips>/selectedTrip/durationText}" />
+                                        </VBox>
+                                        <VBox class="tripInsightPill">
+                                            <Text text="Points" class="tripStatLabel" />
+                                            <Text text="{trips>/selectedTrip/pointCount}" />
+                                        </VBox>
+                                    </HBox>
+
+                                    <form:SimpleForm
+                                        editable="false"
+                                        layout="ResponsiveGridLayout"
+                                        labelSpanXL="3"
+                                        labelSpanL="3"
+                                        labelSpanM="4"
+                                        emptySpanXL="1"
+                                        emptySpanL="1"
+                                        emptySpanM="0"
+                                        columnsXL="1"
+                                        columnsL="1"
+                                        columnsM="1">
+                                        <Label text="Latest Coordinates" />
+                                        <Text text="{trips>/selectedTrip/locationLine}" />
+                                        <Label text="Trip Summary" />
+                                        <Text text="{trips>/selectedTrip/summaryLine}" />
+                                        <Label text="Recording Source" />
+                                        <Text text="{trips>/selectedTrip/sourceLine}" />
+                                        <Label text="Recorded Timeline" />
+                                        <Text text="{trips>/selectedTrip/timelineLine}" />
+                                    </form:SimpleForm>
+
+                                    <VBox class="tripPointPreview">
+                                        <Title text="Recent Captured Points" level="H5" />
+                                        <List
+                                            items="{trips>/selectedTrip/recentPoints}"
+                                            noDataText="No location points captured for this trip yet.">
+                                            <ObjectListItem
+                                                title="{trips>recordedDisplay}"
+                                                number="{trips>speedDisplay}"
+                                                numberUnit="km/h"
+                                                intro="{trips>coordinateLine}">
+                                                <attributes>
+                                                    <ObjectAttribute text="{trips>detailLine}" />
+                                                </attributes>
+                                                <firstStatus>
+                                                    <ObjectStatus text="{trips>source}" />
+                                                </firstStatus>
+                                            </ObjectListItem>
+                                        </List>
+                                    </VBox>
+                                </VBox>
+                            </content>
+                        </Panel>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </content>
     </Page>
 </mvc:View>

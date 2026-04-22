@@ -27,6 +27,10 @@ sap.ui.define([
       this._ensureMap();
     },
 
+    onNavigateToTrips: function () {
+      this.getOwnerComponent().getRouter().navTo("RouteTrips");
+    },
+
     onStartTracking: async function () {
       if (!navigator.geolocation) {
         MessageBox.error("This browser does not support geolocation.");
