@@ -1,5 +1,6 @@
+//Imports the database model
 using tracker from '../db/schema';
-
+//wxposes an API at /tracker
 service TrackerService @(path : '/tracker') {
   entity Trips as projection on tracker.Trips;
   entity LocationPoints as projection on tracker.LocationPoints;

@@ -22,3 +22,17 @@ entity LocationPoints : cuid, managed {
   recordedAt : Timestamp;
   source     : String(30);
 }
+entity Vehicles : cuid, managed{
+  vehicle_number : Integer;
+  type : String;
+  model : Integer;
+  Registration_number : Integer;
+  fuel_type : String(20) enum{
+    PETROL;
+    DIESEL;
+  } default 'PETROL';
+  status : String(20) enum{
+    ACTIVE;
+    DEACTIVATED;
+  } default 'DEACTIVATED';
+}

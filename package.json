@@ -2,42 +2,45 @@
   "name": "location-tracker",
   "version": "1.0.0",
   "private": true,
-  "description": "CAP full stack location tracker with SAPUI5 frontend and SAP HANA-ready persistence.",
+  "description": "CAP full stack location tracker with SAPUI5 frontend and SAP HANA persistence",
+
   "scripts": {
-    "start": "cds-serve",
-    "watch": "cds watch",
-    "watch-locationtracker": "cds watch --open com.locationtracker.locationtracker/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "start": "cds serve",
+    "dev": "cds watch",
+    "hybrid": "cds watch --profile hybrid",
+    "build": "cds build",
+    "deploy": "cds deploy --to hana"
   },
+
   "dependencies": {
-    "@cap-js/hana": "^2",
     "@sap/cds": "^8",
+    "@cap-js/hana": "^1.9.2",
     "express": "^4"
   },
+
   "devDependencies": {
-    "@cap-js/sqlite": "^1",
     "@sap/cds-dk": "^8",
+    "@cap-js/sqlite": "^1",
     "cds-plugin-ui5": "^0.13.0"
   },
+
   "cds": {
     "folders": {
       "db": "db",
       "srv": "srv",
       "app": "app"
     },
+
     "requires": {
       "db": {
-        "[development]": {
-          "kind": "sqlite",
-          "impl": "@cap-js/sqlite",
-          "credentials": {
-            "url": "db/location-tracker.sqlite"
-          }
-        },
+        "kind": "sqlite",
+
         "[hybrid]": {
           "kind": "hana",
           "impl": "@cap-js/hana",
           "deploy-format": "hdbtable"
         },
+
         "[production]": {
           "kind": "hana",
           "impl": "@cap-js/hana",
@@ -46,8 +49,8 @@
       }
     }
   },
+
   "workspaces": [
     "app/*"
   ]
 }
-
