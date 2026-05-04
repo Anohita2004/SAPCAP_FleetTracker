@@ -1,7 +1,24 @@
 namespace tracker;
 using { cuid, managed } from '@sap/cds/common';
+entity Admins : cuid, managed {
+  name    : String(120);
+  email   : String(255);
+  drivers : Composition of many Drivers on drivers.admin = $self;
+}
+entity Drivers : cuid, managed {
+  name   : String(120);
+  email  : String(255);
+  phone  : String(40);
+  status : String(20) enum {
+    ACTIVE;
+    INACTIVE;
+  } default 'ACTIVE';
+  admin  : Association to Admins not null;
+  trips  : Composition of many Trips on trips.driver = $self;
+}
 entity Trips : cuid, managed {
   title     : String(120);
+  driver    : Association to Drivers not null;
   startedAt : Timestamp;
   endedAt   : Timestamp;
   status    : String(20) enum {
@@ -22,16 +39,16 @@ entity LocationPoints : cuid, managed {
   recordedAt : Timestamp;
   source     : String(30);
 }
-entity Vehicles : cuid, managed{
-  vehicle_number : Integer;
-  type : String;
-  model : Integer;
+entity Vehicles : cuid, managed {
+  vehicle_number      : Integer;
+  type                : String;
+  model               : Integer;
   Registration_number : Integer;
-  fuel_type : String(20) enum{
+  fuel_type           : String(20) enum {
     PETROL;
     DIESEL;
   } default 'PETROL';
-  status : String(20) enum{
+  status              : String(20) enum {
     ACTIVE;
     DEACTIVATED;
   } default 'DEACTIVATED';
