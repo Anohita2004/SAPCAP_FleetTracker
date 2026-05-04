@@ -4,24 +4,36 @@
   xmlns="sap.m"
   xmlns:core="sap.ui.core"
   displayBlock="true">
-  <Page title="Live Location Tracker">
+  <Page title="Fleet Tracker">
     <content>
       <VBox class="trackerPage">
         <HBox class="toolbarRow" wrap="Wrap" justifyContent="SpaceBetween" alignItems="Center">
           <VBox>
-            <Title text="Track your path live" level="H2" />
+            <Title text="{= ${view>/isAdmin} ? 'Admin Dashboard' : 'Driver Tracker'}" level="H2" />
+            <Text text="{= ${view>/user/email} ? 'Signed in as ' + ${view>/user/email} : 'Loading signed-in user'}" />
             <Text text="{view>/statusText}" />
             <Text text="{view>/permissionText}" />
           </VBox>
           <HBox wrap="Wrap" class="buttonCluster">
-            <Button text="Start Trip" type="Emphasized" press=".onStartTracking" visible="{= !${view>/tracking} }" />
-            <Button text="Stop Trip" type="Reject" press=".onStopTracking" visible="{view>/tracking}" />
-            <Button text="Refresh Path" press=".onRefreshPath" />
+            <Button text="Start Trip" type="Emphasized" press=".onStartTracking" visible="{= ${view>/isDriver} &amp;&amp; !${view>/tracking} }" />
+            <Button text="Stop Trip" type="Reject" press=".onStopTracking" visible="{= ${view>/isDriver} &amp;&amp; ${view>/tracking} }" />
+            <Button text="Refresh Path" press=".onRefreshPath" visible="{view>/isDriver}" />
             <Button text="View Trips" icon="sap-icon://list" press=".onNavigateToTrips" />
           </HBox>
         </HBox>
 
-        <HBox wrap="Wrap" class="cardRow">
+        <Panel headerText="Assign Driver" class="adminPanel" visible="{view>/isAdmin}">
+          <content>
+            <VBox class="adminForm">
+              <Input value="{view>/driverDraft/name}" placeholder="Driver name" />
+              <Input value="{view>/driverDraft/email}" placeholder="Driver login email" type="Email" />
+              <Input value="{view>/driverDraft/phone}" placeholder="Phone number" />
+              <Button text="Create Driver" type="Emphasized" press=".onCreateDriver" />
+            </VBox>
+          </content>
+        </Panel>
+
+        <HBox wrap="Wrap" class="cardRow" visible="{view>/isDriver}">
           <Panel headerText="Current Trip" class="metricCard">
             <content>
               <VBox class="metricContent">
@@ -51,7 +63,7 @@
           </Panel>
         </HBox>
 
-        <VBox class="mapShell">
+        <VBox class="mapShell" visible="{view>/isDriver}">
           <core:HTML content='&lt;div id="tracker-map" class="trackerMap"&gt;&lt;/div&gt;' />
         </VBox>
       </VBox>

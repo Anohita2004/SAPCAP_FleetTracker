@@ -20,7 +20,7 @@ sap.ui.define([
         }.bind(this)
       });
 
-      this._loadActiveTrip();
+      this._loadUserContext();
     },
 
     onAfterRendering: function () {
@@ -29,6 +29,27 @@ sap.ui.define([
 
     onNavigateToTrips: function () {
       this.getOwnerComponent().getRouter().navTo("RouteTrips");
+    },
+
+    onCreateDriver: async function () {
+      const draft = this._viewModel.getProperty("/driverDraft") || {};
+
+      try {
+        const driver = await this._post("/tracker/createDriver", {
+          name: draft.name,
+          email: draft.email,
+          phone: draft.phone
+        });
+
+        this._viewModel.setProperty("/driverDraft", {
+          name: "",
+          email: "",
+          phone: ""
+        });
+        MessageToast.show("Driver assigned: " + driver.email);
+      } catch (error) {
+        MessageBox.error(error.message || "Unable to create driver.");
+      }
     },
 
     onStartTracking: async function () {
@@ -130,6 +151,32 @@ sap.ui.define([
         }
       } catch (error) {
         this._viewModel.setProperty("/statusText", "Backend reachable, no active trip loaded");
+      }
+    },
+
+    _loadUserContext: async function () {
+      try {
+        const user = await this._get("/tracker/me()");
+        this._viewModel.setProperty("/user", user);
+        this._viewModel.setProperty("/isAdmin", !!user.isAdmin);
+        this._viewModel.setProperty("/isDriver", !!user.isDriver);
+
+        if (user.isDriver) {
+          await this._loadActiveTrip();
+          return;
+        }
+
+        if (user.isAdmin) {
+          this._viewModel.setProperty("/statusText", "Admin mode");
+          this._viewModel.setProperty("/permissionText", "Create drivers, assign them the Driver role, and review their trips.");
+          return;
+        }
+
+        this._viewModel.setProperty("/statusText", "No app role assigned");
+        this._viewModel.setProperty("/permissionText", "Ask an administrator to assign FleetAdmin or Driver in BTP.");
+      } catch (error) {
+        this._viewModel.setProperty("/statusText", "Unable to load login context");
+        this._viewModel.setProperty("/permissionText", error.message || "Authentication context unavailable");
       }
     },
 

@@ -15,6 +15,14 @@ sap.ui.define([
       this.setModel(new JSONModel({
         busy: false,
         tracking: false,
+        user: null,
+        isAdmin: false,
+        isDriver: false,
+        driverDraft: {
+          name: "",
+          email: "",
+          phone: ""
+        },
         currentTrip: null,
         totalPoints: 0,
         lastPoint: null,

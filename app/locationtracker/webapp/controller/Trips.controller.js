@@ -77,7 +77,7 @@ sap.ui.define([
             oModel.setProperty("/loading", true);
 
             try {
-                var oResponse = await this._get("/tracker/Trips?$expand=points&$orderby=startedAt desc");
+                var oResponse = await this._get("/tracker/Trips?$expand=points,driver&$orderby=startedAt desc");
                 var aTrips = (oResponse.value || []).map(function (oTrip) {
                     return this._shapeTrip(oTrip);
                 }.bind(this));
@@ -104,7 +104,8 @@ sap.ui.define([
                 var bMatchesStatus = sStatusFilter === "ALL" || oTrip.status === sStatusFilter;
                 var bMatchesQuery = !sQuery ||
                     oTrip.title.toLowerCase().indexOf(sQuery) > -1 ||
-                    oTrip.status.toLowerCase().indexOf(sQuery) > -1;
+                    oTrip.status.toLowerCase().indexOf(sQuery) > -1 ||
+                    oTrip.driverLine.toLowerCase().indexOf(sQuery) > -1;
 
                 return bMatchesStatus && bMatchesQuery;
             });
@@ -160,6 +161,8 @@ sap.ui.define([
                 ID: oTrip.ID,
                 title: oTrip.title || "Untitled Trip",
                 status: oTrip.status || "UNKNOWN",
+                driverName: oTrip.driver && oTrip.driver.name ? oTrip.driver.name : "Unassigned driver",
+                driverLine: this._buildDriverLine(oTrip.driver),
                 statusState: this._statusToState(oTrip.status),
                 statusNarrative: this._buildStatusNarrative(oTrip, aPoints.length),
                 startedAt: oTrip.startedAt,
@@ -182,6 +185,14 @@ sap.ui.define([
                     };
                 }.bind(this))
             };
+        },
+
+        _buildDriverLine: function (oDriver) {
+            if (!oDriver) {
+                return "Driver unavailable";
+            }
+
+            return "Driver: " + (oDriver.name || oDriver.email || "Unknown") + " | " + (oDriver.email || "No email");
         },
 
         _buildStatusNarrative: function (oTrip, iPointCount) {
@@ -309,3 +320,4 @@ sap.ui.define([
         }
     });
 });
+

@@ -85,6 +85,7 @@
                                                 class="tripStatusBadge" />
                                         </HBox>
                                         <Text text="{trips>summaryLine}" class="tripMetaText" />
+                                        <Text text="{trips>driverLine}" class="tripMetaText" />
                                         <Text text="{trips>locationLine}" class="tripMetaText" />
                                     </VBox>
                                     <VBox class="tripListMetrics" alignItems="End">
@@ -156,6 +157,8 @@
                                         <Text text="{trips>/selectedTrip/locationLine}" />
                                         <Label text="Trip Summary" />
                                         <Text text="{trips>/selectedTrip/summaryLine}" />
+                                        <Label text="Driver" />
+                                        <Text text="{trips>/selectedTrip/driverLine}" />
                                         <Label text="Recording Source" />
                                         <Text text="{trips>/selectedTrip/sourceLine}" />
                                         <Label text="Recorded Timeline" />
