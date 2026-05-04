@@ -8,6 +8,7 @@ default-*.json
 *.sqlite
 
 # MTA
+mta-op-2f8a41ff-477d-11f1-82aa-eeee0a8734e5
 mta_archives/
 *_mta_build_tmp
 *.mtar

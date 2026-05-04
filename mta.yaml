@@ -1,0 +1,91 @@
+_schema-version: 3.3.0
+ID: location-tracker
+version: 1.0.0
+description: "CAP full stack location tracker with SAPUI5 frontend and SAP HANA persistence"
+
+parameters:
+  enable-parallel-deployments: true
+
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npm ci
+        - npx cds build --production
+
+modules:
+  - name: location-tracker-srv
+    type: nodejs
+    path: gen/srv
+    parameters:
+      instances: 1
+      buildpack: nodejs_buildpack
+    build-parameters:
+      builder: npm-ci
+    provides:
+      - name: srv-api
+        properties:
+          srv-url: ${default-url}
+    requires:
+      - name: location-tracker-auth
+      - name: location-tracker-db
+
+  - name: location-tracker-db-deployer
+    type: hdb
+    path: gen/db
+    parameters:
+      buildpack: nodejs_buildpack
+    requires:
+      - name: location-tracker-db
+
+  - name: location-tracker-approuter
+    type: approuter.nodejs
+    path: app/router
+    parameters:
+      instances: 1
+      buildpack: nodejs_buildpack
+      keep-existing-routes: true
+    build-parameters:
+      builder: custom
+      commands:
+        - npm install --production
+        - mkdir -p resources/com.locationtracker.locationtracker
+        - cp -r ../../app/locationtracker/webapp/. resources/com.locationtracker.locationtracker/
+    requires:
+      - name: location-tracker-auth
+      - name: srv-api
+        group: destinations
+        properties:
+          name: srv-api
+          url: ~{srv-url}
+          forwardAuthToken: true
+
+resources:
+  - name: location-tracker-auth
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
+      config:
+        xsappname: location-tracker-${org}-${space}
+        tenant-mode: dedicated
+        oauth2-configuration:
+          credential-types:
+            - "binding-secret"
+            - "x509"
+        role-collections:
+          - name: "FleetAdmin (location-tracker ${org}-${space})"
+            description: "generated"
+            role-template-references:
+              - "$XSAPPNAME.FleetAdmin"
+          - name: "Driver (location-tracker ${org}-${space})"
+            description: "generated"
+            role-template-references:
+              - "$XSAPPNAME.Driver"
+
+  - name: location-tracker-db
+    type: com.sap.xs.hdi-container
+    parameters:
+      service: hana
+      service-plan: hdi-shared

@@ -49,3 +49,5 @@ cds.on("bootstrap", (app) => {
     }
   });
 });
+
+if (require.main === module) cds.server();
