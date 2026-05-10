@@ -14,7 +14,7 @@ entity Drivers : cuid, managed {
     ACTIVE;
     INACTIVE;
   } default 'ACTIVE';
-  admin        : Association to Admins not null;
+  admin        : Association to Admins;
   trips        : Composition of many Trips on trips.driver = $self;
 }
 entity Trips : cuid, managed {
