@@ -21,7 +21,15 @@ service TrackerService @(path : '/tracker') {
     { grant: 'READ', to: ['Driver', 'FleetAdmin'] },
     { grant: ['CREATE', 'UPDATE', 'DELETE'], to: 'FleetAdmin' }
   ]
-  entity Drivers as projection on tracker.Drivers;
+  entity Drivers as projection on tracker.Drivers {
+    ID,
+    name,
+    email,
+    phone,
+    status,
+    admin,
+    trips
+  };
 
   @restrict: [
     { grant: 'READ', to: ['Driver', 'FleetAdmin'] },

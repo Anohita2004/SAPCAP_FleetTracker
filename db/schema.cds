@@ -6,15 +6,16 @@ entity Admins : cuid, managed {
   drivers : Composition of many Drivers on drivers.admin = $self;
 }
 entity Drivers : cuid, managed {
-  name   : String(120);
-  email  : String(255);
-  phone  : String(40);
-  status : String(20) enum {
+  name         : String(120);
+  email        : String(255);
+  passwordHash : String(255);
+  phone        : String(40);
+  status       : String(20) enum {
     ACTIVE;
     INACTIVE;
   } default 'ACTIVE';
-  admin  : Association to Admins not null;
-  trips  : Composition of many Trips on trips.driver = $self;
+  admin        : Association to Admins not null;
+  trips        : Composition of many Trips on trips.driver = $self;
 }
 entity Trips : cuid, managed {
   title     : String(120);

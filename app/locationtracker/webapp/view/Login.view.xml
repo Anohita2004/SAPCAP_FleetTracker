@@ -1,0 +1,20 @@
+<mvc:View
+  controllerName="com.locationtracker.locationtracker.controller.Login"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  displayBlock="true">
+  <Page title="Driver Login" class="loginPage">
+    <content>
+      <VBox class="loginShell" alignItems="Center" justifyContent="Center">
+        <Title text="Fleet Tracker" level="H1" class="brandTitle" />
+        <Text text="Secure driver access" class="brandSubtitle" />
+        <Input id="emailInput" placeholder="Email" type="Email" value="{view>/login/email}" />
+        <Input id="passwordInput" placeholder="Password" type="Password" value="{view>/login/password}" />
+        <Button text="Login" type="Emphasized" press="onLogin" />
+        <HBox class="auxActions" justifyContent="Center">
+          <Button text="Register" type="Transparent" press="onRegister" />
+        </HBox>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

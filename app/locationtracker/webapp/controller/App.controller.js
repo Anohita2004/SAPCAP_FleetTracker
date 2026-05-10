@@ -156,6 +156,23 @@ sap.ui.define([
 
     _loadUserContext: async function () {
       try {
+        // Prefer app-managed driver token
+        const token = localStorage.getItem('driver_token');
+        if (token) {
+          try {
+            const driver = await this._get('/drivers/profile');
+            this._viewModel.setProperty('/user', driver);
+            this._viewModel.setProperty('/isDriver', true);
+            this._viewModel.setProperty('/isAdmin', false);
+            await this._loadActiveTrip();
+            return;
+          } catch (e) {
+            // token invalid or profile failed - fall through
+            localStorage.removeItem('driver_token');
+          }
+        }
+
+        // Fallback to platform-authenticated context
         const user = await this._get("/tracker/me()");
         this._viewModel.setProperty("/user", user);
         this._viewModel.setProperty("/isAdmin", !!user.isAdmin);
@@ -179,6 +196,7 @@ sap.ui.define([
         this._viewModel.setProperty("/permissionText", error.message || "Authentication context unavailable");
       }
     },
+
 
     _onPositionSuccess: async function (position) {
   const trip = this._viewModel.getProperty("/currentTrip");
@@ -309,11 +327,9 @@ sap.ui.define([
     },
 
     _get: async function (url) {
-      const response = await fetch(url, {
-        headers: {
-          Accept: "application/json"
-        }
-      });
+      const token = localStorage.getItem('driver_token');
+      const headers = Object.assign({ Accept: "application/json" }, token ? { Authorization: 'Bearer ' + token } : {});
+      const response = await fetch(url, { headers });
 
       if (!response.ok) {
         throw new Error(await this._extractError(response));
@@ -323,12 +339,11 @@ sap.ui.define([
     },
 
     _post: async function (url, payload) {
+      const token = localStorage.getItem('driver_token');
+      const headers = Object.assign({ "Content-Type": "application/json", Accept: "application/json" }, token ? { Authorization: 'Bearer ' + token } : {});
       const response = await fetch(url, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
+        headers,
         body: JSON.stringify(payload)
       });
 

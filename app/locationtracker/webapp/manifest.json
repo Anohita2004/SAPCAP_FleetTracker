@@ -72,8 +72,13 @@
       },
       "routes": [
         {
-          "name": "RouteApp",
+          "name": "RouteLogin",
           "pattern": "",
+          "target": "TargetLogin"
+        },
+        {
+          "name": "RouteApp",
+          "pattern": "app",
           "target": "TargetApp"
         },
         {
@@ -83,6 +88,9 @@
         }
       ],
       "targets": {
+        "TargetLogin": {
+          "viewName": "Login"
+        },
         "TargetApp": {
           "viewName": "App"
         },
