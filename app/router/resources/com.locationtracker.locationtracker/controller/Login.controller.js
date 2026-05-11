@@ -25,8 +25,6 @@ sap.ui.define([
     },
 
     onAdminLogin: function () {
-      // Redirect to approuter login to trigger XSUAA auth
-      // Preserve return path so user returns to the app after auth
       const redirect = encodeURIComponent(window.location.pathname);
       window.location.href = '/login?redirect=' + redirect;
     },
