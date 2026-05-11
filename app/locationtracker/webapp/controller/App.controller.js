@@ -14,6 +14,10 @@ sap.ui.define([
       this._points = [];
       this._viewModel = this.getOwnerComponent().getModel("view");
 
+      // Initialize some navigation state
+      this._viewModel.setProperty('/nav', { active: 'home' });
+      this._viewModel.setProperty('/showAdminPanel', false);
+
       this.getView().addEventDelegate({
         onAfterShow: function () {
           this._ensureMap();
@@ -22,6 +26,40 @@ sap.ui.define([
 
       this._loadUserContext();
     },
+
+    onNavHome: function () {
+      this._viewModel.setProperty('/nav/active', 'home');
+      // ensure primary dashboard is visible
+      this.getView().byId && this.getView().getController && this._ensureMap();
+    },
+
+    onNavDrivers: function () {
+      // show the admin driver panel (toggle)
+      const current = this._viewModel.getProperty('/showAdminPanel');
+      this._viewModel.setProperty('/showAdminPanel', !current);
+    },
+
+    onLogout: function () {
+      localStorage.removeItem('driver_token');
+      // for platform logout, redirect to approuter logout if available
+      try {
+        const origin = window.location.origin || '';
+        if (!/localhost|127\.0\.0\.1|:4004/.test(origin)) {
+          window.location.href = origin + '/logout';
+          return;
+        }
+      } catch (e) {
+        // ignore
+      }
+
+      // fallback: reload app in anonymous state
+      this._viewModel.setProperty('/user', {});
+      this._viewModel.setProperty('/isAdmin', false);
+      this._viewModel.setProperty('/isDriver', false);
+      MessageToast.show('Logged out');
+    },
+
+
 
     onAfterRendering: function () {
       this._ensureMap();
