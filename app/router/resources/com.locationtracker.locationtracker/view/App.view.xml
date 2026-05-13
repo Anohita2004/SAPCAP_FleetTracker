@@ -5,6 +5,16 @@
   xmlns:core="sap.ui.core"
   displayBlock="true">
   <Page title="Fleet Tracker">
+    <headerContent>
+      <OverflowToolbar design="Transparent" class="navBar">
+        <Button text="Home" press=".onNavHome" type="Transparent" icon="sap-icon://home" />
+        <Button text="Trips" press=".onNavigateToTrips" type="Transparent" icon="sap-icon://map-2" />
+        <Button text="Drivers" press=".onNavDrivers" type="Transparent" icon="sap-icon://employee" visible="{view>/isAdmin}" />
+        <ToolbarSpacer />
+        <Button text="Login" press=".onNavHome" type="Transparent" visible="{= !${view>/isAdmin} &amp;&amp; !${view>/isDriver} }"/>
+        <Button text="Logout" press=".onLogout" type="Transparent" visible="{= ${view>/isAdmin} || ${view>/isDriver} }"/>
+      </OverflowToolbar>
+    </headerContent>
     <content>
       <VBox class="trackerPage">
         <HBox class="toolbarRow" wrap="Wrap" justifyContent="SpaceBetween" alignItems="Center">
@@ -22,7 +32,7 @@
           </HBox>
         </HBox>
 
-        <Panel headerText="Assign Driver" class="adminPanel" visible="{view>/isAdmin}">
+        <Panel headerText="Assign Driver" class="adminPanel" visible="{= ${view>/isAdmin} || ${view>/showAdminPanel} }">
           <content>
             <VBox class="adminForm">
               <Input value="{view>/driverDraft/name}" placeholder="Driver name" />

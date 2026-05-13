@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "CAP full stack location tracker with SAPUI5 frontend and SAP HANA persistence",
-
   "scripts": {
     "start": "node server.js",
+    "predev": "cds deploy --to sqlite:db.sqlite",
     "dev": "cds watch",
     "hybrid": "cds watch --profile hybrid",
     "build": "cds build",
@@ -13,43 +13,33 @@
     "build:mta": "mbt build",
     "deploy:btp": "cf deploy mta_archives/location-tracker_1.0.0.mtar"
   },
-
   "dependencies": {
-    "@sap/approuter": "^16",
-    "@sap/cds": "^8",
     "@cap-js/hana": "^1.9.2",
+    "@sap/cds": "^8",
     "@sap/xssec": "^4",
+    "bcryptjs": "^3.0.3",
     "express": "^4",
-    "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^9.0.0"
+    "jsonwebtoken": "^9.0.3"
   },
-
   "devDependencies": {
-    "@sap/cds-dk": "^8",
     "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^8.9.19",
     "cds-plugin-ui5": "^0.13.0"
   },
-
   "cds": {
     "folders": {
       "db": "db",
       "srv": "srv",
       "app": "app"
     },
-
     "requires": {
       "db": {
         "kind": "sqlite",
-         "pool": {
-          "acquireTimeoutMillis": 10000
-        },
-
         "[production]": {
           "kind": "hana",
           "impl": "@cap-js/hana",
           "deploy-format": "hdbtable"
         },
-
         "[hybrid]": {
           "kind": "hana",
           "impl": "@cap-js/hana",
@@ -57,13 +47,35 @@
         }
       },
       "auth": {
+        "[development]": {
+          "kind": "mocked",
+          "users": {
+            "admin": {
+              "roles": [
+                "FleetAdmin"
+              ],
+              "attr": {
+                "given_name": "Fleet",
+                "family_name": "Admin"
+              }
+            },
+            "driver": {
+              "roles": [
+                "Driver"
+              ],
+              "attr": {
+                "given_name": "Fleet",
+                "family_name": "Driver"
+              }
+            }
+          }
+        },
         "[production]": {
           "kind": "xsuaa"
         }
       }
     }
   },
-
   "workspaces": [
     "app/*"
   ]

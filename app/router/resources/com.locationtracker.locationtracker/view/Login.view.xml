@@ -9,11 +9,13 @@
         <Title text="Fleet Tracker" level="H1" class="brandTitle" />
         <Text text="Choose how you want to sign in" class="brandSubtitle" />
 
+        <!-- Choice buttons shown initially -->
         <HBox id="choiceBox" gap="1rem" visible="{= !${view>/login/mode} }" justifyContent="Center">
           <Button text="Login as Driver" type="Emphasized" press="onSelectDriver" />
           <Button text="Login as Admin" press="onSelectAdmin" />
         </HBox>
 
+        <!-- Driver login form -->
         <VBox id="driverLogin" visible="{= ${view>/login/mode} === 'driver' }" class="driverForm" alignItems="Center">
           <Text text="Driver login" />
           <Input id="emailInput" placeholder="Email" type="Email" value="{view>/login/email}" />
@@ -24,6 +26,7 @@
           </HBox>
         </VBox>
 
+        <!-- Admin login action -->
         <VBox id="adminLogin" visible="{= ${view>/login/mode} === 'admin' }" alignItems="Center">
           <Text text="Admin login uses BTP (xsuaa)" />
           <Button text="Login as Admin (BTP)" type="Emphasized" press="onAdminLogin" />

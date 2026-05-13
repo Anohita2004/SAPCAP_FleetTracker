@@ -1,0 +1,970 @@
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:45:44.372761] Updated app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 ({"lifecycle"=>{"data"=>{"buildpacks"=>["nodejs_buildpack"]}, "type"=>"buildpack"}}) (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:45:44.479459] Updating process: "web" (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:14.021795] Uploading app package for app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:14.259460] Updated app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 ({"environment_variables"=>"[PRIVATE DATA HIDDEN]"}) (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:24.035644] Creating build for app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:24.366808] Downloading nodejs_buildpack... (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:24.394431] Downloaded nodejs_buildpack (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:24.394496] Cell 3697da87-6170-41a4-acb7-9186f1527dfa creating container for instance 9009e537-0189-4062-b78d-9fe6e21165c1 (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:25.034339] Security group rules were updated (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:25.296870] Cell 3697da87-6170-41a4-acb7-9186f1527dfa successfully created container for instance 9009e537-0189-4062-b78d-9fe6e21165c1 (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:26.021465] Downloading app package... (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:26.021477] Downloading build artifacts cache... (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:26.054069] Downloaded build artifacts cache (225B) (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:26.851110] Downloaded app package (5.2M) (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:26.954774] -----> Nodejs Buildpack version 1.8.44 (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:27.303796] -----> Bootstrapping python (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:27.303822] -----> Installing python 3.11.14 (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:27.303911] Copy [/tmp/buildpacks/ee597f2be8090397/dependencies/b5e0345ae0ae1932e7d56fffaa49a487/python_3.11.14_linux_x64_cflinuxfs4_66f53248.tgz] (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:31.851770] -----> Installing binaries (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:31.852040] engines.node (package.json): unspecified (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:31.852153] engines.npm (package.json): unspecified (use default) (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:31.852228] [31;1m**WARNING**[0m Node version not specified in package.json or .nvmrc. See: http://docs.cloudfoundry.org/buildpacks/node/node-tips.html (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:31.852340] -----> Installing node 22.22.0 (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:31.852645] Copy [/tmp/buildpacks/ee597f2be8090397/dependencies/65c50d3a8311e7796847437aebc5aebd/node_22.22.0_linux_x64_cflinuxfs4_a73ffe6d.tgz] (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:34.702917] Using default npm version: 10.9.4 (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:34.702932] -----> Installing yarn 1.22.22 (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:34.702985] Copy [/tmp/buildpacks/ee597f2be8090397/dependencies/e3a39aedd1236924d69cc2d0637a8ed2/yarn_1.22.22_linux_noarch_any-stack_4911d0a6.tgz] (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:35.078941] Installed yarn 1.22.22 (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:35.078955] -----> Creating runtime environment (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:35.080950] NODE_ENV=production (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:35.080962] NODE_HOME=/tmp/contents1671716650/deps/0/node (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:35.081006] NODE_MODULES_CACHE=true (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:35.081017] NODE_VERBOSE=false (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:35.081020] NPM_CONFIG_LOGLEVEL=error (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:35.081023] NPM_CONFIG_PRODUCTION=true (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:35.081114] -----> Building dependencies (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:35.081134] Prebuild detected (node_modules already exists) (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:35.081149] Rebuilding any native modules (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:35.817202] rebuilt dependencies successfully (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:35.818506] npm notice (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:35.818515] npm notice New major version of npm available! 10.9.4 -> 11.14.1 (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:35.818518] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.1 (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:35.818521] npm notice To update run: npm install -g npm@11.14.1 (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:35.818524] npm notice (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:35.894194] Installing any new modules (package.json + package-lock.json) (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:36.707220] up to date in 734ms (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:36.707425] 18 packages are looking for funding (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:36.707435] run `npm fund` for details (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:37.692548] Contrast Security no credentials found. Will not write environment files. (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:49.417151] Exit status 0 (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:49.417223] Uploading droplet, build artifacts cache... (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:49.417299] Uploading droplet... (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:49.417648] Uploading build artifacts cache... (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:49.456789] Uploaded build artifacts cache (228B) (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:50.375517] Creating droplet for app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:52.477975] Uploaded droplet (61M) (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:52.499604] Uploading complete (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:53.191820] Cell 3697da87-6170-41a4-acb7-9186f1527dfa stopping instance 9009e537-0189-4062-b78d-9fe6e21165c1 (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:53.191859] Cell 3697da87-6170-41a4-acb7-9186f1527dfa destroying container for instance 9009e537-0189-4062-b78d-9fe6e21165c1 (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:53.286296] Staging complete for build 9009e537-0189-4062-b78d-9fe6e21165c1 (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:53.914003] Updated app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 ({:droplet_guid=>"c3819bc4-3c5f-406f-880d-f6967bd69117"}) (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:54.148614] Creating revision for app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:54.202333] Starting app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:54.461330] Cell 54b50d35-322b-4617-baa3-c13476b47cb5 creating container for instance d913497b-243b-4287-697e-71a0 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:55.321851] Security group rules were updated (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:55.436705] Cell 54b50d35-322b-4617-baa3-c13476b47cb5 successfully created container for instance d913497b-243b-4287-697e-71a0 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:55.863572] Downloading droplet... (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:46:56.825824] Cell 3697da87-6170-41a4-acb7-9186f1527dfa successfully destroyed container for instance 9009e537-0189-4062-b78d-9fe6e21165c1 (STDOUT, STG)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:01.401604] Downloaded droplet (61M) (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:01.401962] Starting health monitoring of container (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:01.539976] Invoking pre-start scripts. (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:01.834591] Invoking start command. (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.390545] > location-tracker@1.0.0 start (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.390570] > node server.js (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.588933] node:internal/modules/cjs/loader:1386 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.588957] throw err; (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.588969] ^ (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.588979] Error: Cannot find module 'jsonwebtoken' (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.588984] Require stack: (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.588997] - /home/vcap/app/server.js (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.589004] at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.589009] at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.589014] at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.589019] at Function._load (node:internal/modules/cjs/loader:1192:37) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.589024] at TracingChannel.traceSync (node:diagnostics_channel:328:14) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.589028] at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.589034] at Module.require (node:internal/modules/cjs/loader:1463:12) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.589039] at require (node:internal/modules/helpers:147:16) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.589047] at Object.<anonymous> (/home/vcap/app/server.js:5:13) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.589051] at Module._compile (node:internal/modules/cjs/loader:1706:14) { (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.589056] code: 'MODULE_NOT_FOUND', (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.589061] requireStack: [ '/home/vcap/app/server.js' ] (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.589065] } (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.589072] Node.js v22.22.0 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.600738] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.600763] npm notice New major version of npm available! 10.9.4 -> 11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.600769] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.600775] npm notice To update run: npm install -g npm@11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.600780] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:02.696218] Exit status 1 (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:09.904798] Cell 54b50d35-322b-4617-baa3-c13476b47cb5 stopping instance d913497b-243b-4287-697e-71a0 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:09.904846] Cell 54b50d35-322b-4617-baa3-c13476b47cb5 destroying container for instance d913497b-243b-4287-697e-71a0 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:09.911495] Process has crashed with type: "web" (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:09.930937] App instance exited with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 payload: {"instance"=>"d913497b-243b-4287-697e-71a0", "index"=>0, "cell_id"=>"54b50d35-322b-4617-baa3-c13476b47cb5", "reason"=>"CRASHED", "exit_description"=>"APP/PROC/WEB: Exited with status 1", "crash_count"=>1, "crash_timestamp"=>1778557629875565776, "version"=>"fc37bf55-beb3-4b58-a5ef-ad12c0d10b3b"} (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:09.977422] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf creating container for instance c1f8aebb-2afc-4629-7085-5fe0 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:10.080116] Exit status 137 (STDOUT, PROXY)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:12.820395] Cell 54b50d35-322b-4617-baa3-c13476b47cb5 successfully destroyed container for instance d913497b-243b-4287-697e-71a0 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:13.865181] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf failed to create container for instance c1f8aebb-2afc-4629-7085-5fe0: external networker encountered an error running 'up' action: exit status 1 (STDERR, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:13.900935] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf destroying container for instance c1f8aebb-2afc-4629-7085-5fe0 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:13.904439] Process has crashed with type: "web" (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:13.904617] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf successfully destroyed container for instance c1f8aebb-2afc-4629-7085-5fe0 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:13.926973] App instance exited with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 payload: {"instance"=>"c1f8aebb-2afc-4629-7085-5fe0", "index"=>0, "cell_id"=>"4401fcd0-006d-4ceb-9b51-aa22a1b186cf", "reason"=>"CRASHED", "exit_description"=>"failed to create container: external networker encountered an error running 'up' action: exit status 1", "crash_count"=>2, "crash_timestamp"=>1778557633867508396, "version"=>"fc37bf55-beb3-4b58-a5ef-ad12c0d10b3b"} (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:13.963544] Cell 1ea14514-f0fe-461c-9aa9-a53bbe093b00 creating container for instance f06faffc-4ac8-4b28-5e82-8f30 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:14.754639] Security group rules were updated (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:14.859564] Cell 1ea14514-f0fe-461c-9aa9-a53bbe093b00 successfully created container for instance f06faffc-4ac8-4b28-5e82-8f30 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:15.563173] Downloading droplet... (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:20.593009] Downloaded droplet (61M) (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:20.593231] Starting health monitoring of container (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:20.745372] Invoking pre-start scripts. (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.056213] Invoking start command. (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.599469] > location-tracker@1.0.0 start (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.599507] > node server.js (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798340] node:internal/modules/cjs/loader:1386 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798367] throw err; (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798371] ^ (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798377] Error: Cannot find module 'jsonwebtoken' (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798381] Require stack: (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798388] - /home/vcap/app/server.js (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798396] at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798399] at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798403] at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798407] at Function._load (node:internal/modules/cjs/loader:1192:37) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798410] at TracingChannel.traceSync (node:diagnostics_channel:328:14) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798414] at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798417] at Module.require (node:internal/modules/cjs/loader:1463:12) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798420] at require (node:internal/modules/helpers:147:16) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798424] at Object.<anonymous> (/home/vcap/app/server.js:5:13) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798427] at Module._compile (node:internal/modules/cjs/loader:1706:14) { (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798430] code: 'MODULE_NOT_FOUND', (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798434] requireStack: [ '/home/vcap/app/server.js' ] (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798437] } (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.798441] Node.js v22.22.0 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.812387] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.812403] npm notice New major version of npm available! 10.9.4 -> 11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.812407] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.812411] npm notice To update run: npm install -g npm@11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.812418] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:21.913809] Exit status 1 (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:28.778247] Cell 1ea14514-f0fe-461c-9aa9-a53bbe093b00 stopping instance f06faffc-4ac8-4b28-5e82-8f30 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:28.778280] Cell 1ea14514-f0fe-461c-9aa9-a53bbe093b00 destroying container for instance f06faffc-4ac8-4b28-5e82-8f30 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:28.801638] Process has crashed with type: "web" (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:28.822222] App instance exited with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 payload: {"instance"=>"f06faffc-4ac8-4b28-5e82-8f30", "index"=>0, "cell_id"=>"1ea14514-f0fe-461c-9aa9-a53bbe093b00", "reason"=>"CRASHED", "exit_description"=>"APP/PROC/WEB: Exited with status 1", "crash_count"=>3, "crash_timestamp"=>1778557648767572151, "version"=>"fc37bf55-beb3-4b58-a5ef-ad12c0d10b3b"} (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:28.976318] Exit status 137 (STDOUT, PROXY)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:31.797333] Cell 1ea14514-f0fe-461c-9aa9-a53bbe093b00 successfully destroyed container for instance f06faffc-4ac8-4b28-5e82-8f30 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:34.715328] Stopping app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:34.916102] Starting app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:35.119804] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf creating container for instance db8393a7-5d42-4128-54ee-7dc1 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:35.913847] Security group rules were updated (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:36.023247] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf successfully created container for instance db8393a7-5d42-4128-54ee-7dc1 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:37.224156] Downloading droplet... (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:42.258827] Downloaded droplet (61M) (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:42.259053] Starting health monitoring of container (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:42.380998] Invoking pre-start scripts. (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:42.658108] Invoking start command. (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.153936] > location-tracker@1.0.0 start (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.153968] > node server.js (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376628] node:internal/modules/cjs/loader:1386 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376655] throw err; (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376665] ^ (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376672] Error: Cannot find module 'jsonwebtoken' (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376675] Require stack: (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376679] - /home/vcap/app/server.js (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376683] at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376686] at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376689] at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376693] at Function._load (node:internal/modules/cjs/loader:1192:37) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376697] at TracingChannel.traceSync (node:diagnostics_channel:328:14) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376700] at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376703] at Module.require (node:internal/modules/cjs/loader:1463:12) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376706] at require (node:internal/modules/helpers:147:16) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376710] at Object.<anonymous> (/home/vcap/app/server.js:5:13) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376713] at Module._compile (node:internal/modules/cjs/loader:1706:14) { (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376717] code: 'MODULE_NOT_FOUND', (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376720] requireStack: [ '/home/vcap/app/server.js' ] (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376726] } (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.376730] Node.js v22.22.0 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.389518] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.389594] npm notice New major version of npm available! 10.9.4 -> 11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.389610] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.389615] npm notice To update run: npm install -g npm@11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.389620] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:43.478387] Exit status 1 (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:50.731939] Process has crashed with type: "web" (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:50.732307] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf stopping instance db8393a7-5d42-4128-54ee-7dc1 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:50.732355] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf destroying container for instance db8393a7-5d42-4128-54ee-7dc1 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:50.748570] App instance exited with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 payload: {"instance"=>"db8393a7-5d42-4128-54ee-7dc1", "index"=>0, "cell_id"=>"4401fcd0-006d-4ceb-9b51-aa22a1b186cf", "reason"=>"CRASHED", "exit_description"=>"APP/PROC/WEB: Exited with status 1", "crash_count"=>1, "crash_timestamp"=>1778557670698738510, "version"=>"5140aa73-4eac-43b9-9721-55132fffd16a"} (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:50.800207] Cell 1ea14514-f0fe-461c-9aa9-a53bbe093b00 creating container for instance 9cbd28ba-1261-4cc2-4626-394c (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:50.956557] Exit status 137 (STDOUT, PROXY)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:51.543158] Security group rules were updated (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:51.670987] Cell 1ea14514-f0fe-461c-9aa9-a53bbe093b00 successfully created container for instance 9cbd28ba-1261-4cc2-4626-394c (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:53.230253] Downloading droplet... (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:53.435077] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf successfully destroyed container for instance db8393a7-5d42-4128-54ee-7dc1 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:58.476414] Downloaded droplet (61M) (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:58.476818] Starting health monitoring of container (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:58.650982] Invoking pre-start scripts. (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:58.892330] Invoking start command. (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.348816] > location-tracker@1.0.0 start (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.348844] > node server.js (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.527932] node:internal/modules/cjs/loader:1386 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.527982] throw err; (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.527987] ^ (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.527991] Error: Cannot find module 'jsonwebtoken' (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.527997] Require stack: (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.528002] - /home/vcap/app/server.js (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.528009] at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.528012] at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.528016] at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.528021] at Function._load (node:internal/modules/cjs/loader:1192:37) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.528024] at TracingChannel.traceSync (node:diagnostics_channel:328:14) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.528026] at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.528039] at Module.require (node:internal/modules/cjs/loader:1463:12) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.528042] at require (node:internal/modules/helpers:147:16) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.528045] at Object.<anonymous> (/home/vcap/app/server.js:5:13) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.528048] at Module._compile (node:internal/modules/cjs/loader:1706:14) { (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.528051] code: 'MODULE_NOT_FOUND', (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.528055] requireStack: [ '/home/vcap/app/server.js' ] (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.528057] } (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.528187] Node.js v22.22.0 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.541227] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.541265] npm notice New major version of npm available! 10.9.4 -> 11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.541272] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.541276] npm notice To update run: npm install -g npm@11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.541282] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:47:59.641290] Exit status 1 (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:06.306559] Process has crashed with type: "web" (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:06.310097] Cell 1ea14514-f0fe-461c-9aa9-a53bbe093b00 stopping instance 9cbd28ba-1261-4cc2-4626-394c (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:06.310163] Cell 1ea14514-f0fe-461c-9aa9-a53bbe093b00 destroying container for instance 9cbd28ba-1261-4cc2-4626-394c (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:06.327273] App instance exited with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 payload: {"instance"=>"9cbd28ba-1261-4cc2-4626-394c", "index"=>0, "cell_id"=>"1ea14514-f0fe-461c-9aa9-a53bbe093b00", "reason"=>"CRASHED", "exit_description"=>"APP/PROC/WEB: Exited with status 1", "crash_count"=>2, "crash_timestamp"=>1778557686278838873, "version"=>"5140aa73-4eac-43b9-9721-55132fffd16a"} (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:06.378700] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf creating container for instance b7393a0c-2f8a-4403-6724-ec80 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:06.501358] Exit status 137 (STDOUT, PROXY)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:07.203492] Security group rules were updated (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:07.312562] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf successfully created container for instance b7393a0c-2f8a-4403-6724-ec80 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:07.861893] Downloading droplet... (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:09.401644] Cell 1ea14514-f0fe-461c-9aa9-a53bbe093b00 successfully destroyed container for instance 9cbd28ba-1261-4cc2-4626-394c (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:09.846996] Downloaded droplet (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:09.847209] Starting health monitoring of container (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:09.976349] Invoking pre-start scripts. (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:10.243962] Invoking start command. (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:10.797433] > location-tracker@1.0.0 start (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:10.797465] > node server.js (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021437] node:internal/modules/cjs/loader:1386 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021452] throw err; (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021458] ^ (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021463] Error: Cannot find module 'jsonwebtoken' (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021467] Require stack: (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021472] - /home/vcap/app/server.js (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021479] at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021493] at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021498] at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021503] at Function._load (node:internal/modules/cjs/loader:1192:37) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021512] at TracingChannel.traceSync (node:diagnostics_channel:328:14) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021517] at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021522] at Module.require (node:internal/modules/cjs/loader:1463:12) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021526] at require (node:internal/modules/helpers:147:16) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021531] at Object.<anonymous> (/home/vcap/app/server.js:5:13) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021536] at Module._compile (node:internal/modules/cjs/loader:1706:14) { (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021541] code: 'MODULE_NOT_FOUND', (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021545] requireStack: [ '/home/vcap/app/server.js' ] (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021550] } (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.021622] Node.js v22.22.0 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.036835] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.036850] npm notice New major version of npm available! 10.9.4 -> 11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.036856] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.036869] npm notice To update run: npm install -g npm@11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.036873] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:11.133162] Exit status 1 (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:18.379426] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf stopping instance b7393a0c-2f8a-4403-6724-ec80 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:18.379475] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf destroying container for instance b7393a0c-2f8a-4403-6724-ec80 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:18.399159] Process has crashed with type: "web" (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:18.419560] App instance exited with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 payload: {"instance"=>"b7393a0c-2f8a-4403-6724-ec80", "index"=>0, "cell_id"=>"4401fcd0-006d-4ceb-9b51-aa22a1b186cf", "reason"=>"CRASHED", "exit_description"=>"APP/PROC/WEB: Exited with status 1", "crash_count"=>3, "crash_timestamp"=>1778557698369025038, "version"=>"5140aa73-4eac-43b9-9721-55132fffd16a"} (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:18.576928] Exit status 137 (STDOUT, PROXY)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:48:21.245442] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf successfully destroyed container for instance b7393a0c-2f8a-4403-6724-ec80 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:04.021574] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf creating container for instance 08c8a10a-c701-488e-6451-b0c8 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:04.768175] Security group rules were updated (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:04.872708] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf successfully created container for instance 08c8a10a-c701-488e-6451-b0c8 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:05.547177] Downloading droplet... (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:07.715346] Downloaded droplet (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:07.716226] Starting health monitoring of container (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:07.840243] Invoking pre-start scripts. (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.130763] Invoking start command. (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.658120] > location-tracker@1.0.0 start (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.658160] > node server.js (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858048] node:internal/modules/cjs/loader:1386 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858085] throw err; (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858089] ^ (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858094] Error: Cannot find module 'jsonwebtoken' (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858100] Require stack: (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858105] - /home/vcap/app/server.js (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858110] at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858113] at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858123] at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858129] at Function._load (node:internal/modules/cjs/loader:1192:37) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858137] at TracingChannel.traceSync (node:diagnostics_channel:328:14) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858141] at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858146] at Module.require (node:internal/modules/cjs/loader:1463:12) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858151] at require (node:internal/modules/helpers:147:16) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858154] at Object.<anonymous> (/home/vcap/app/server.js:5:13) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858158] at Module._compile (node:internal/modules/cjs/loader:1706:14) { (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858162] code: 'MODULE_NOT_FOUND', (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858165] requireStack: [ '/home/vcap/app/server.js' ] (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858168] } (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.858172] Node.js v22.22.0 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.871327] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.871355] npm notice New major version of npm available! 10.9.4 -> 11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.871368] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.871377] npm notice To update run: npm install -g npm@11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.871382] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:08.960950] Exit status 1 (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:15.858814] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf stopping instance 08c8a10a-c701-488e-6451-b0c8 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:15.858868] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf destroying container for instance 08c8a10a-c701-488e-6451-b0c8 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:15.884963] Process has crashed with type: "web" (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:15.904946] App instance exited with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 payload: {"instance"=>"08c8a10a-c701-488e-6451-b0c8", "index"=>0, "cell_id"=>"4401fcd0-006d-4ceb-9b51-aa22a1b186cf", "reason"=>"CRASHED", "exit_description"=>"APP/PROC/WEB: Exited with status 1", "crash_count"=>4, "crash_timestamp"=>1778557755848488270, "version"=>"5140aa73-4eac-43b9-9721-55132fffd16a"} (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:16.047506] Exit status 137 (STDOUT, PROXY)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:49:18.655313] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf successfully destroyed container for instance 08c8a10a-c701-488e-6451-b0c8 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:35.413960] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf creating container for instance 1cc805a3-c062-46f3-48f8-0f5c (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:36.218796] Security group rules were updated (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:36.395322] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf successfully created container for instance 1cc805a3-c062-46f3-48f8-0f5c (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:38.672257] Downloading droplet... (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:40.749652] Downloaded droplet (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:40.750026] Starting health monitoring of container (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:40.881529] Invoking pre-start scripts. (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.157820] Invoking start command. (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.638879] > location-tracker@1.0.0 start (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.638897] > node server.js (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822053] node:internal/modules/cjs/loader:1386 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822088] throw err; (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822096] ^ (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822101] Error: Cannot find module 'jsonwebtoken' (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822107] Require stack: (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822111] - /home/vcap/app/server.js (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822116] at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822119] at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822123] at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822128] at Function._load (node:internal/modules/cjs/loader:1192:37) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822131] at TracingChannel.traceSync (node:diagnostics_channel:328:14) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822134] at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822140] at Module.require (node:internal/modules/cjs/loader:1463:12) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822143] at require (node:internal/modules/helpers:147:16) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822150] at Object.<anonymous> (/home/vcap/app/server.js:5:13) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822156] at Module._compile (node:internal/modules/cjs/loader:1706:14) { (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822159] code: 'MODULE_NOT_FOUND', (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822161] requireStack: [ '/home/vcap/app/server.js' ] (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822165] } (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.822169] Node.js v22.22.0 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.834360] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.834388] npm notice New major version of npm available! 10.9.4 -> 11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.834394] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.834398] npm notice To update run: npm install -g npm@11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.834406] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:41.932747] Exit status 1 (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:49.054100] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf stopping instance 1cc805a3-c062-46f3-48f8-0f5c (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:49.054167] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf destroying container for instance 1cc805a3-c062-46f3-48f8-0f5c (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:49.077766] Process has crashed with type: "web" (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:49.100684] App instance exited with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 payload: {"instance"=>"1cc805a3-c062-46f3-48f8-0f5c", "index"=>0, "cell_id"=>"4401fcd0-006d-4ceb-9b51-aa22a1b186cf", "reason"=>"CRASHED", "exit_description"=>"APP/PROC/WEB: Exited with status 1", "crash_count"=>5, "crash_timestamp"=>1778557849040884699, "version"=>"5140aa73-4eac-43b9-9721-55132fffd16a"} (STDOUT, API)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:49.250605] Exit status 137 (STDOUT, PROXY)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:50:51.748377] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf successfully destroyed container for instance 1cc805a3-c062-46f3-48f8-0f5c (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:07.689553] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf creating container for instance 8e77c42e-7433-4c8b-4e88-d095 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:08.423066] Security group rules were updated (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:08.579878] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf successfully created container for instance 8e77c42e-7433-4c8b-4e88-d095 (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:09.048152] Downloading droplet... (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:11.141064] Downloaded droplet (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:11.141609] Starting health monitoring of container (STDOUT, CELL)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:11.299852] Invoking pre-start scripts. (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:11.578431] Invoking start command. (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.114609] > location-tracker@1.0.0 start (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.114659] > node server.js (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.322926] node:internal/modules/cjs/loader:1386 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.322959] throw err; (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.322968] ^ (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.322972] Error: Cannot find module 'jsonwebtoken' (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.322976] Require stack: (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.322979] - /home/vcap/app/server.js (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.322991] at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.322994] at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.322997] at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.323001] at Function._load (node:internal/modules/cjs/loader:1192:37) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.323004] at TracingChannel.traceSync (node:diagnostics_channel:328:14) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.323007] at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.323010] at Module.require (node:internal/modules/cjs/loader:1463:12) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.323013] at require (node:internal/modules/helpers:147:16) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.323018] at Object.<anonymous> (/home/vcap/app/server.js:5:13) (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.323021] at Module._compile (node:internal/modules/cjs/loader:1706:14) { (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.446#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.323023] code: 'MODULE_NOT_FOUND', (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.323026] requireStack: [ '/home/vcap/app/server.js' ] (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.323029] } (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.323033] Node.js v22.22.0 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.337663] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.337689] npm notice New major version of npm available! 10.9.4 -> 11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.337692] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.337696] npm notice To update run: npm install -g npm@11.14.1 (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.337699] npm notice (STDERR, APP/PROC/WEB)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:12.430632] Exit status 1 (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:19.474626] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf stopping instance 8e77c42e-7433-4c8b-4e88-d095 (STDOUT, CELL)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:19.474696] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf destroying container for instance 8e77c42e-7433-4c8b-4e88-d095 (STDOUT, CELL)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:19.493050] Process has crashed with type: "web" (STDOUT, API)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:19.513276] App instance exited with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 payload: {"instance"=>"8e77c42e-7433-4c8b-4e88-d095", "index"=>0, "cell_id"=>"4401fcd0-006d-4ceb-9b51-aa22a1b186cf", "reason"=>"CRASHED", "exit_description"=>"APP/PROC/WEB: Exited with status 1", "crash_count"=>6, "crash_timestamp"=>1778557999464516868, "version"=>"5140aa73-4eac-43b9-9721-55132fffd16a"} (STDOUT, API)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:19.680588] Exit status 137 (STDOUT, PROXY)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:22.206122] Cell 4401fcd0-006d-4ceb-9b51-aa22a1b186cf successfully destroyed container for instance 8e77c42e-7433-4c8b-4e88-d095 (STDOUT, CELL)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:57.787733] Updated app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 ({"lifecycle"=>{"data"=>{"buildpacks"=>["nodejs_buildpack"]}, "type"=>"buildpack"}}) (STDOUT, API)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:53:57.928561] Updating process: "web" (STDOUT, API)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:25.561896] Uploading app package for app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 (STDOUT, API)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:25.805851] Updated app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 ({"environment_variables"=>"[PRIVATE DATA HIDDEN]"}) (STDOUT, API)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:35.735612] Stopping app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 (STDOUT, API)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:36.036890] Creating build for app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 (STDOUT, API)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:36.360971] Downloading nodejs_buildpack... (STDOUT, STG)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:36.391061] Downloaded nodejs_buildpack (STDOUT, STG)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:36.391184] Cell 1ea14514-f0fe-461c-9aa9-a53bbe093b00 creating container for instance f4cb3e5e-37f2-4df7-a418-d4c2c9abaa30 (STDOUT, STG)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:37.114051] Security group rules were updated (STDOUT, STG)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:37.214109] Cell 1ea14514-f0fe-461c-9aa9-a53bbe093b00 successfully created container for instance f4cb3e5e-37f2-4df7-a418-d4c2c9abaa30 (STDOUT, STG)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:38.862453] Downloading app package... (STDOUT, STG)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:38.862494] Downloading build artifacts cache... (STDOUT, STG)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:38.900608] Downloaded build artifacts cache (228B) (STDOUT, STG)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:39.819842] Downloaded app package (5.3M) (STDOUT, STG)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:39.954922] -----> Nodejs Buildpack version 1.8.44 (STDOUT, STG)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:40.353790] -----> Bootstrapping python (STDOUT, STG)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:40.353985] -----> Installing python 3.11.14 (STDOUT, STG)#
+#2026 05 12 03:54:45.447#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14128#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:40.354170] Copy [/tmp/buildpacks/ee597f2be8090397/dependencies/b5e0345ae0ae1932e7d56fffaa49a487/python_3.11.14_linux_x64_cflinuxfs4_66f53248.tgz] (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:45.801750] -----> Installing binaries (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:45.802312] engines.node (package.json): unspecified (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:45.802324] engines.npm (package.json): unspecified (use default) (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:45.802370] [31;1m**WARNING**[0m Node version not specified in package.json or .nvmrc. See: http://docs.cloudfoundry.org/buildpacks/node/node-tips.html (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:45.802493] -----> Installing node 22.22.0 (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:45.802835] Copy [/tmp/buildpacks/ee597f2be8090397/dependencies/65c50d3a8311e7796847437aebc5aebd/node_22.22.0_linux_x64_cflinuxfs4_a73ffe6d.tgz] (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:49.213880] Using default npm version: 10.9.4 (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:49.213893] -----> Installing yarn 1.22.22 (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:49.214037] Copy [/tmp/buildpacks/ee597f2be8090397/dependencies/e3a39aedd1236924d69cc2d0637a8ed2/yarn_1.22.22_linux_noarch_any-stack_4911d0a6.tgz] (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:49.634704] Installed yarn 1.22.22 (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:49.634719] -----> Creating runtime environment (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:49.637295] NODE_ENV=production (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:49.637413] NODE_HOME=/tmp/contents814571903/deps/0/node (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:49.637464] NODE_MODULES_CACHE=true (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:49.637613] NODE_VERBOSE=false (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:49.637624] NPM_CONFIG_LOGLEVEL=error (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:49.637642] NPM_CONFIG_PRODUCTION=true (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:49.637809] -----> Building dependencies (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:49.637831] Prebuild detected (node_modules already exists) (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:49.637971] Rebuilding any native modules (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:50.603168] rebuilt dependencies successfully (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:50.604626] npm notice (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:50.604637] npm notice New major version of npm available! 10.9.4 -> 11.14.1 (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:50.604642] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.1 (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:50.604649] npm notice To update run: npm install -g npm@11.14.1 (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:50.604653] npm notice (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:50.699215] Installing any new modules (package.json + package-lock.json) (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:51.740138] up to date in 934ms (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:51.740361] 18 packages are looking for funding (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:51.740372] run `npm fund` for details (STDOUT, STG)#
+#2026 05 12 03:54:55.508#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14135#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:54:52.939456] Contrast Security no credentials found. Will not write environment files. (STDOUT, STG)#
+#2026 05 12 03:55:15.588#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14154#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:07.336945] Exit status 0 (STDOUT, STG)#
+#2026 05 12 03:55:15.588#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14154#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:07.337018] Uploading droplet, build artifacts cache... (STDOUT, STG)#
+#2026 05 12 03:55:15.588#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14154#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:07.337101] Uploading build artifacts cache... (STDOUT, STG)#
+#2026 05 12 03:55:15.588#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14154#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:07.337102] Uploading droplet... (STDOUT, STG)#
+#2026 05 12 03:55:15.588#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14154#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:07.368840] Uploaded build artifacts cache (225B) (STDOUT, STG)#
+#2026 05 12 03:55:15.588#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14154#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:08.270671] Creating droplet for app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 (STDOUT, API)#
+#2026 05 12 03:55:15.588#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14154#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:12.369224] Uploaded droplet (61M) (STDOUT, STG)#
+#2026 05 12 03:55:15.588#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14154#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:12.400948] Uploading complete (STDOUT, STG)#
+#2026 05 12 03:55:15.588#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14154#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:12.981375] Cell 1ea14514-f0fe-461c-9aa9-a53bbe093b00 stopping instance f4cb3e5e-37f2-4df7-a418-d4c2c9abaa30 (STDOUT, STG)#
+#2026 05 12 03:55:15.588#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14154#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:12.981409] Cell 1ea14514-f0fe-461c-9aa9-a53bbe093b00 destroying container for instance f4cb3e5e-37f2-4df7-a418-d4c2c9abaa30 (STDOUT, STG)#
+#2026 05 12 03:55:15.588#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14154#
+[PollStageAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:13.062985] Staging complete for build f4cb3e5e-37f2-4df7-a418-d4c2c9abaa30 (STDOUT, API)#
+#2026 05 12 03:55:25.668#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14162#
+[PollStartAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:15.682534] Updated app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 ({:droplet_guid=>"1683e580-9c00-4f20-bd37-0db0b9f78a9a"}) (STDOUT, API)#
+#2026 05 12 03:55:25.668#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14162#
+[PollStartAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:15.960779] Creating revision for app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 (STDOUT, API)#
+#2026 05 12 03:55:25.668#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14162#
+[PollStartAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:16.014191] Starting app with guid 89df08ac-9c69-404a-9ee2-4d34f41e6d70 (STDOUT, API)#
+#2026 05 12 03:55:25.668#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14162#
+[PollStartAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:16.294142] Cell 3697da87-6170-41a4-acb7-9186f1527dfa creating container for instance f9f5f9e2-7ae5-4d16-48f3-60a6 (STDOUT, CELL)#
+#2026 05 12 03:55:25.668#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14162#
+[PollStartAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:16.437666] Cell 1ea14514-f0fe-461c-9aa9-a53bbe093b00 successfully destroyed container for instance f4cb3e5e-37f2-4df7-a418-d4c2c9abaa30 (STDOUT, STG)#
+#2026 05 12 03:55:25.668#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14162#
+[PollStartAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:16.970828] Security group rules were updated (STDOUT, CELL)#
+#2026 05 12 03:55:25.668#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14162#
+[PollStartAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:17.073917] Cell 3697da87-6170-41a4-acb7-9186f1527dfa successfully created container for instance f9f5f9e2-7ae5-4d16-48f3-60a6 (STDOUT, CELL)#
+#2026 05 12 03:55:25.668#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14162#
+[PollStartAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:17.486515] Downloading droplet... (STDOUT, CELL)#
+#2026 05 12 03:55:25.668#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14162#
+[PollStartAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:22.087783] Downloaded droplet (61M) (STDOUT, CELL)#
+#2026 05 12 03:55:25.668#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14162#
+[PollStartAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:22.088069] Starting health monitoring of container (STDOUT, CELL)#
+#2026 05 12 03:55:25.668#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14162#
+[PollStartAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:22.195037] Invoking pre-start scripts. (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:55:25.668#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14162#
+[PollStartAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:22.426556] Invoking start command. (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:55:25.668#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14162#
+[PollStartAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:22.883153] > location-tracker@1.0.0 start (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:55:25.668#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14162#
+[PollStartAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:22.883170] > node server.js (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:55:25.668#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14162#
+[PollStartAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:23.650350] {"level":"info","logger":"cds","timestamp":"2026-05-12T03:55:23.648Z","layer":"cds","component_type":"application","container_id":"10.32.2.7","component_id":"89df08ac-9c69-404a-9ee2-4d34f41e6d70","component_name":"location-tracker-srv","component_instance":0,"source_instance":0,"organization_name":"8cdc8e79trial","organization_id":"e798cb16-a193-4ee4-a228-ba147135aa22","space_name":"dev","space_id":"27c06231-ae14-4b56-84fc-67ce3d72ceab","msg":"using auth strategy {\n  kind: 'xsuaa',\n  impl: 'node_modules/@sap/cds/lib/srv/middlewares/auth/jwt-auth'\n} \n","type":"log"} (STDOUT, APP/PROC/WEB)#
+#2026 05 12 03:55:25.668#Z#DEBUG#2a4a60f1-4db6-11f1-b47b-eeee0a95f40c.location-tracker-srv#flowable-async-job-executor-thread-14162#
+[PollStartAppStatusExecution] 89df08ac-9c69-404a-9ee2-4d34f41e6d70 [2026-05-12T03:55:25.067255] Container became healthy (STDOUT, CELL)#
