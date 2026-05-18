@@ -1,4 +1,5 @@
 const cds = require("@sap/cds");
+const bcrypt = require("bcryptjs");
 const { SELECT, INSERT, UPDATE } = cds.ql;
 
 module.exports = cds.service.impl(function () {
@@ -116,6 +117,13 @@ module.exports = cds.service.impl(function () {
     const email = normalizeEmail(req.data.email);
     if (!email) return req.reject(400, "Driver email is required");
 
+    const password = String(req.data.password || "");
+    if (password.length < 8) {
+      return req.reject(400, "A temporary password with at least 8 characters is required");
+    }
+
+    const passwordHash = await bcrypt.hash(password, 10);
+
     const existingDriver = await getDriverByEmail(email);
     if (existingDriver && existingDriver.admin_ID !== admin.ID) {
       return req.reject(409, "A driver with this email is already assigned to another admin");
@@ -126,9 +134,11 @@ module.exports = cds.service.impl(function () {
         .set({
           name: req.data.name || existingDriver.name,
           phone: req.data.phone || existingDriver.phone,
+          passwordHash,
           status: "ACTIVE"
         })
         .where({ ID: existingDriver.ID });
+
       return SELECT.one.from(Drivers).where({ ID: existingDriver.ID });
     }
 
@@ -136,13 +146,22 @@ module.exports = cds.service.impl(function () {
       ID: cds.utils.uuid(),
       name: req.data.name || email,
       email,
+      passwordHash,
       phone: req.data.phone || null,
       status: "ACTIVE",
       admin_ID: admin.ID
     };
 
     await INSERT.into(Drivers).entries(entry);
-    return entry;
+
+    return {
+      ID: entry.ID,
+      name: entry.name,
+      email: entry.email,
+      phone: entry.phone,
+      status: entry.status,
+      admin_ID: entry.admin_ID
+    };
   });
 
   this.on("startTrip", async (req) => {

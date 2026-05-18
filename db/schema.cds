@@ -40,6 +40,11 @@ entity LocationPoints : cuid, managed {
   recordedAt : Timestamp;
   source     : String(30);
 }
+entity DriverSessions : cuid, managed {
+  driver    : Association to Drivers not null;
+  tokenHash : String(64) not null;
+  expiresAt : Timestamp;
+}
 entity Vehicles : cuid, managed {
   vehicle_number      : Integer;
   type                : String;

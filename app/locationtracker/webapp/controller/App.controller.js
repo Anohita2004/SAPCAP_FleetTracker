@@ -70,25 +70,28 @@ sap.ui.define([
     },
 
     onCreateDriver: async function () {
-      const draft = this._viewModel.getProperty("/driverDraft") || {};
+  const draft = this._viewModel.getProperty("/driverDraft") || {};
 
-      try {
-        const driver = await this._post("/tracker/createDriver", {
-          name: draft.name,
-          email: draft.email,
-          phone: draft.phone
-        });
+  try {
+    const driver = await this._post("/tracker/createDriver", {
+      name: draft.name,
+      email: draft.email,
+      phone: draft.phone,
+      password: draft.password
+    });
 
-        this._viewModel.setProperty("/driverDraft", {
-          name: "",
-          email: "",
-          phone: ""
-        });
-        MessageToast.show("Driver assigned: " + driver.email);
-      } catch (error) {
-        MessageBox.error(error.message || "Unable to create driver.");
-      }
-    },
+    this._viewModel.setProperty("/driverDraft", {
+      name: "",
+      email: "",
+      phone: "",
+      password: ""
+    });
+
+    MessageToast.show("Driver assigned: " + driver.email);
+  } catch (error) {
+    MessageBox.error(error.message || "Unable to create driver.");
+  }
+},
 
     onStartTracking: async function () {
       if (!navigator.geolocation) {
@@ -100,9 +103,10 @@ sap.ui.define([
         let trip = this._viewModel.getProperty("/currentTrip");
 
         if (!trip || trip.status !== "ACTIVE") {
-          trip = await this._post("/tracker/startTrip", {
-            title: "Trip " + new Date().toLocaleString()
-          });
+          const token = localStorage.getItem("driver_token");
+trip = await this._post(token ? "/drivers/start" : "/tracker/startTrip", {
+  title: "Trip " + new Date().toLocaleString()
+});
           this._viewModel.setProperty("/currentTrip", trip);
           this._points = [];
           this._syncPolyline();
@@ -141,7 +145,10 @@ sap.ui.define([
       }
 
       try {
-        const stoppedTrip = await this._post("/tracker/stopTrip", { tripId: trip.ID });
+        const token = localStorage.getItem("driver_token");
+const stoppedTrip = await this._post(token ? "/drivers/stop" : "/tracker/stopTrip", {
+  tripId: trip.ID
+});
         this._viewModel.setProperty("/currentTrip", stoppedTrip);
         this._viewModel.setProperty("/tracking", false);
         this._viewModel.setProperty("/statusText", "Tracking stopped");
@@ -178,19 +185,23 @@ sap.ui.define([
     },
 
     _loadActiveTrip: async function () {
-      try {
-        const trip = await this._get("/tracker/activeTrip()");
-        if (trip && trip.ID) {
-          this._viewModel.setProperty("/currentTrip", trip);
-          this._viewModel.setProperty("/statusText", "Active trip restored");
-          await this.onRefreshPath();
-        } else {
-          this._viewModel.setProperty("/statusText", "Backend reachable, no active trip loaded");
-        }
-      } catch (error) {
-        this._viewModel.setProperty("/statusText", "Backend reachable, no active trip loaded");
-      }
-    },
+  try {
+    const token = localStorage.getItem("driver_token");
+    const trip = token
+      ? await this._get("/drivers/activeTrip")
+      : await this._get("/tracker/activeTrip()");
+
+    if (trip && trip.ID) {
+      this._viewModel.setProperty("/currentTrip", trip);
+      this._viewModel.setProperty("/statusText", "Active trip restored");
+      await this.onRefreshPath();
+    } else {
+      this._viewModel.setProperty("/statusText", "Backend reachable, no active trip loaded");
+    }
+  } catch (error) {
+    this._viewModel.setProperty("/statusText", "Backend reachable, no active trip loaded");
+  }
+},
 
     _loadUserContext: async function () {
       try {
@@ -255,7 +266,8 @@ sap.ui.define([
   };
 
   try {
-    const point = await this._post("/tracker/recordLocation", payload);
+    const token = localStorage.getItem("driver_token");
+    const point = await this._post(token ? "/drivers/recordLocation" : "/tracker/recordLocation", payload);
     const latLng = [Number(point.latitude), Number(point.longitude)];
     this._points.push(latLng);
     this._viewModel.setProperty("/lastPoint", point);

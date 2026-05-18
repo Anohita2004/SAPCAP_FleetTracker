@@ -33,15 +33,16 @@
         </HBox>
 
         <Panel headerText="Assign Driver" class="adminPanel" visible="{= ${view>/isAdmin} || ${view>/showAdminPanel} }">
-          <content>
-            <VBox class="adminForm">
-              <Input value="{view>/driverDraft/name}" placeholder="Driver name" />
-              <Input value="{view>/driverDraft/email}" placeholder="Driver login email" type="Email" />
-              <Input value="{view>/driverDraft/phone}" placeholder="Phone number" />
-              <Button text="Create Driver" type="Emphasized" press=".onCreateDriver" />
-            </VBox>
-          </content>
-        </Panel>
+  <content>
+    <VBox class="adminForm">
+      <Input value="{view>/driverDraft/name}" placeholder="Driver name" />
+      <Input value="{view>/driverDraft/email}" placeholder="Driver login email" type="Email" />
+      <Input value="{view>/driverDraft/phone}" placeholder="Phone number" />
+      <Input value="{view>/driverDraft/password}" placeholder="Temporary password" type="Password" />
+      <Button text="Create Driver" type="Emphasized" press=".onCreateDriver" />
+    </VBox>
+  </content>
+</Panel>
 
         <HBox wrap="Wrap" class="cardRow" visible="{view>/isDriver}">
           <Panel headerText="Current Trip" class="metricCard">
