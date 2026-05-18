@@ -4,47 +4,116 @@
   xmlns="sap.m"
   xmlns:core="sap.ui.core"
   displayBlock="true">
+
+ <mvc:dependents>
+  <Dialog id="createDriverDialog" title="Create Driver" contentWidth="32rem">
+    <content>
+      <VBox class="adminForm">
+        <Input value="{view>/driverDraft/name}" placeholder="Driver name" />
+        <Input value="{view>/driverDraft/email}" placeholder="Driver login email" type="Email" />
+        <Input value="{view>/driverDraft/phone}" placeholder="Phone number" />
+        <Input value="{view>/driverDraft/password}" placeholder="Temporary password" type="Password" />
+      </VBox>
+    </content>
+    <beginButton>
+      <Button text="Create" type="Emphasized" icon="sap-icon://add-employee" press=".onCreateDriver" />
+    </beginButton>
+    <endButton>
+      <Button text="Cancel" press=".onCloseCreateDriver" />
+    </endButton>
+  </Dialog>
+</mvc:dependents>
+
   <Page title="Fleet Tracker">
     <headerContent>
       <OverflowToolbar design="Transparent" class="navBar">
         <Button text="Home" press=".onNavHome" type="Transparent" icon="sap-icon://home" />
         <Button text="Trips" press=".onNavigateToTrips" type="Transparent" icon="sap-icon://map-2" />
-        <Button text="Drivers" press=".onNavDrivers" type="Transparent" icon="sap-icon://employee" visible="{view>/isAdmin}" />
+        <Button text="Drivers" press=".onRefreshFleet" type="Transparent" icon="sap-icon://employee" visible="{view>/isAdmin}" />
+        <Button icon="sap-icon://add" tooltip="Create Driver" press=".onOpenCreateDriver" type="Emphasized" visible="{view>/isAdmin}" />
         <ToolbarSpacer />
-        <Button text="Login" press=".onNavHome" type="Transparent" visible="{= !${view>/isAdmin} &amp;&amp; !${view>/isDriver} }"/>
-        <Button text="Logout" press=".onLogout" type="Transparent" visible="{= ${view>/isAdmin} || ${view>/isDriver} }"/>
+        <Text text="{view>/lastRefreshText}" visible="{view>/isAdmin}" class="refreshText" />
+        <Button text="Login" press=".onNavHome" type="Transparent" visible="{= !${view>/isAdmin} &amp;&amp; !${view>/isDriver} }" />
+        <Button text="Logout" press=".onLogout" type="Transparent" visible="{= ${view>/isAdmin} || ${view>/isDriver} }" />
       </OverflowToolbar>
     </headerContent>
+
     <content>
       <VBox class="trackerPage">
         <HBox class="toolbarRow" wrap="Wrap" justifyContent="SpaceBetween" alignItems="Center">
-          <VBox>
-            <Title text="{= ${view>/isAdmin} ? 'Admin Dashboard' : 'Driver Tracker'}" level="H2" />
+          <VBox class="heroText">
+            <Title text="{= ${view>/isAdmin} ? 'Fleet Operations' : 'Driver Tracker'}" level="H2" />
             <Text text="{= ${view>/user/email} ? 'Signed in as ' + ${view>/user/email} : 'Loading signed-in user'}" />
             <Text text="{view>/statusText}" />
             <Text text="{view>/permissionText}" />
           </VBox>
+
           <HBox wrap="Wrap" class="buttonCluster">
-            <Button text="Start Trip" type="Emphasized" press=".onStartTracking" visible="{= ${view>/isDriver} &amp;&amp; !${view>/tracking} }" />
-            <Button text="Stop Trip" type="Reject" press=".onStopTracking" visible="{= ${view>/isDriver} &amp;&amp; ${view>/tracking} }" />
-            <Button text="Refresh Path" press=".onRefreshPath" visible="{view>/isDriver}" />
+            <Button text="Start Trip" type="Emphasized" icon="sap-icon://begin" press=".onStartTracking" visible="{= ${view>/isDriver} &amp;&amp; !${view>/tracking} }" />
+            <Button text="Stop Trip" type="Reject" icon="sap-icon://stop" press=".onStopTracking" visible="{= ${view>/isDriver} &amp;&amp; ${view>/tracking} }" />
+            <Button text="Refresh Path" icon="sap-icon://refresh" press=".onRefreshPath" visible="{view>/isDriver}" />
+            <Button text="Refresh Fleet" icon="sap-icon://refresh" press=".onRefreshFleet" visible="{view>/isAdmin}" />
             <Button text="View Trips" icon="sap-icon://list" press=".onNavigateToTrips" />
           </HBox>
         </HBox>
 
-        <Panel headerText="Assign Driver" class="adminPanel" visible="{= ${view>/isAdmin} || ${view>/showAdminPanel} }">
-  <content>
-    <VBox class="adminForm">
-      <Input value="{view>/driverDraft/name}" placeholder="Driver name" />
-      <Input value="{view>/driverDraft/email}" placeholder="Driver login email" type="Email" />
-      <Input value="{view>/driverDraft/phone}" placeholder="Phone number" />
-      <Input value="{view>/driverDraft/password}" placeholder="Temporary password" type="Password" />
-      <Button text="Create Driver" type="Emphasized" press=".onCreateDriver" />
-    </VBox>
-  </content>
-</Panel>
+        <HBox wrap="Wrap" class="cardRow" visible="{view>/isAdmin}">
+          <Panel headerText="Drivers" class="metricCard">
+            <content>
+              <VBox class="metricContent">
+                <ObjectNumber number="{= ${view>/adminStats/totalDrivers} || 0 }" unit="total" />
+                <ObjectStatus text="{= (${view>/adminStats/activeDrivers} || 0) + ' active'}" state="Success" />
+              </VBox>
+            </content>
+          </Panel>
 
-        <HBox wrap="Wrap" class="cardRow" visible="{view>/isDriver}">
+          <Panel headerText="Active Trips" class="metricCard">
+            <content>
+              <VBox class="metricContent">
+                <ObjectNumber number="{= ${view>/adminStats/activeTrips} || 0 }" unit="live" />
+                <ObjectStatus text="Live tracking" state="Information" />
+              </VBox>
+            </content>
+          </Panel>
+
+          <Panel headerText="Completed Trips" class="metricCard">
+            <content>
+              <VBox class="metricContent">
+                <ObjectNumber number="{= ${view>/adminStats/completedTrips} || 0 }" unit="done" />
+                <ObjectStatus text="Trip archive" state="None" />
+              </VBox>
+            </content>
+          </Panel>
+        </HBox>
+
+        <HBox class="adminWorkspace" visible="{view>/isAdmin}">
+          <Panel headerText="Drivers" class="driverListPanel">
+            <content>
+              <List items="{view>/drivers}" noDataText="No drivers created yet">
+                <CustomListItem>
+                  <HBox class="driverRow" alignItems="Center">
+                    <Avatar initials="{view>initials}" displaySize="XS" class="driverAvatar" />
+
+                    <VBox class="driverRowText">
+                      <Text text="{view>name}" class="driverName" />
+                      <Text text="{view>email}" class="driverMeta" />
+                      <Text text="{view>lastSeenText}" class="driverMeta" />
+                    </VBox>
+
+                    <ObjectStatus text="{view>status}" state="{view>statusState}" class="driverStatusBadge" />
+                    <Button icon="sap-icon://locate-me" tooltip="Locate driver" type="Transparent" press=".onLocateDriver" />
+                  </HBox>
+                </CustomListItem>
+              </List>
+            </content>
+          </Panel>
+
+          <VBox class="mapShell adminMapShell">
+            <core:HTML content='&lt;div id="tracker-map" class="trackerMap"&gt;&lt;/div&gt;' />
+          </VBox>
+        </HBox>
+
+        <HBox wrap="Wrap" class="cardRow driverCards" visible="{view>/isDriver}">
           <Panel headerText="Current Trip" class="metricCard">
             <content>
               <VBox class="metricContent">
@@ -68,7 +137,7 @@
           <Panel headerText="Captured Points" class="metricCard">
             <content>
               <VBox class="metricContent">
-                <ObjectNumber number="{view>/totalPoints}" unit="pts" />
+                <ObjectNumber number="{= ${view>/totalPoints} || 0 }" unit="pts" />
               </VBox>
             </content>
           </Panel>

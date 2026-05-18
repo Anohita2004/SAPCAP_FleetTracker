@@ -1,15 +1,170 @@
-/* Premium UI theme overrides */
-:root{
+:root {
   --brand-1: #0a6ed1;
   --brand-2: #083d77;
-  --bg-1: linear-gradient(135deg,#f3f8ff 0%, #eef6fb 100%);
+  --bg-page: #f5f8fb;
   --card-bg: #ffffff;
-  --muted: #6b7b8c;
+  --border-soft: #d9e2ec;
+  --text-muted: #6b7b8c;
 }
 
 body {
   font-family: Inter, "Helvetica Neue", Arial, sans-serif;
-  background: var(--bg-1);
+  background: var(--bg-page);
+}
+
+.navBar {
+  border-bottom: 1px solid var(--border-soft);
+  background: #ffffff;
+}
+
+.trackerPage {
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-page);
+  min-height: calc(100vh - 3rem);
+}
+
+.toolbarRow {
+  gap: 1rem;
+  background: #ffffff;
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 16px rgba(9, 30, 63, 0.05);
+}
+
+.heroText {
+  gap: 0.25rem;
+}
+
+.buttonCluster {
+  gap: 0.5rem;
+}
+
+.cardRow {
+  gap: 1rem;
+  width: 100%;
+}
+
+.metricCard {
+  min-width: 16rem;
+  min-height: 8rem;
+  flex: 1 1 16rem;
+  background: var(--card-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 4px 16px rgba(9, 30, 63, 0.05);
+}
+
+.metricContent {
+  gap: 0.5rem;
+  padding: 0.75rem;
+}
+
+.adminForm {
+  gap: 0.75rem;
+  padding: 0.75rem;
+}
+
+.adminWorkspace {
+  gap: 1rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+.driverListPanel {
+  width: 24rem;
+  min-height: 30rem;
+  border-radius: 8px;
+}
+
+.driverRow {
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-left: 3px solid transparent;
+}
+
+.driverRow:hover {
+  border-left-color: var(--brand-1);
+  background: #f5f8fb;
+}
+
+.driverRowText {
+  flex: 1;
+  min-width: 0;
+}
+
+.driverName {
+  font-weight: 600;
+  color: #1d2b3a;
+}
+
+.driverMeta {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+}
+
+.driverAvatar .sapFAvatar {
+  background: var(--brand-1);
+  color: #ffffff;
+}
+
+.driverStatusBadge {
+  min-width: 5rem;
+}
+
+.refreshText {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  align-self: center;
+}
+
+.mapShell {
+  flex: 1;
+  width: 100%;
+  min-height: 30rem;
+  background: #ffffff;
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(9, 30, 63, 0.05);
+}
+
+.adminMapShell {
+  min-width: 30rem;
+}
+
+.trackerMap {
+  width: 100%;
+  height: 30rem;
+  display: block;
+}
+
+.driverMapMarker {
+  background: transparent;
+  border: 0;
+}
+
+.driverMapMarker span {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(9, 30, 63, 0.22);
+}
+
+.markerLive {
+  background: #188918;
+}
+
+.markerIdle {
+  background: #6b7b8c;
 }
 
 .loginPage .loginShell {
@@ -18,45 +173,65 @@ body {
   margin: 3rem auto;
   gap: 1rem;
   padding: 2rem;
-  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(250,250,250,0.8));
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(10,30,60,0.12);
+  background: #ffffff;
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(10, 30, 60, 0.1);
   align-items: stretch;
 }
 
-.brandTitle{
+.brandTitle {
   color: var(--brand-2);
   text-align: center;
   margin-bottom: 0.25rem;
 }
-.brandSubtitle{ text-align:center; color:var(--muted); margin-bottom: 1rem; }
 
-/* Page layout */
-.trackerPage{ gap:1.25rem; padding:1.25rem; }
-.toolbarRow{ gap:1rem; background: linear-gradient(90deg, rgba(10,110,209,0.06), rgba(8,61,119,0.02)); border-radius:12px; padding:1rem 1.25rem; box-shadow: 0 6px 20px rgba(9,30,63,0.04); }
-.buttonCluster{ gap: 0.75rem; }
-.cardRow{ gap:1rem; width:100%; }
-.metricCard{ min-width:18rem; flex:1 1 20rem; background: var(--card-bg); border-radius:12px; border: 1px solid rgba(13,40,70,0.06); box-shadow: 0 6px 24px rgba(9,30,63,0.06); }
-.metricContent{ gap:0.75rem; padding:1.25rem; }
-.adminPanel{ max-width:42rem; }
-.adminForm{ gap:0.75rem; padding:1rem; }
-
-.mapShell{ margin-top:1rem; border-radius:12px; overflow:hidden; border:1px solid rgba(13,40,70,0.04); width:100%; min-height:28rem; background: linear-gradient(180deg,#ffffff,#f7fbff); }
-.trackerMap{ width:100%; height:28rem; display:block; }
-
-/* Cards & lists */
-.tripStatCard{ padding:1.2rem; border-radius:12px; background:var(--card-bg); border:1px solid rgba(13,40,70,0.04); box-shadow: 0 8px 30px rgba(10,30,60,0.06); }
-.tripStatLabel{ color:var(--muted); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; }
-
-/* Premium accent */
-.ButtonEmphasizedOverride .sapMBtnEmphasized{ background: linear-gradient(90deg,var(--brand-1),var(--brand-2)); border:none; color:#fff; }
-
-/* Responsive tuning */
-@media (max-width: 720px){
-  .trackerMap{ height:20rem; }
-  .loginPage .loginShell{ margin:1.25rem; padding:1rem; }
+.brandSubtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
 }
 
-/* small helper */
-.auxActions{ margin-top:0.5rem; display:flex; justify-content:center; }
+.auxActions {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
 
+@media (max-width: 800px) {
+  .trackerPage {
+    padding: 0.75rem;
+  }
+
+  .toolbarRow,
+  .adminWorkspace {
+    flex-direction: column;
+  }
+
+  .metricCard,
+  .driverListPanel {
+    width: 100%;
+    max-width: none;
+  }
+
+  .adminMapShell {
+    min-width: 100%;
+  }
+
+  .trackerMap {
+    height: 24rem;
+  }
+
+  .buttonCluster {
+    width: 100%;
+  }
+
+  .buttonCluster .sapMBtn {
+    flex: 1;
+  }
+
+  .loginPage .loginShell {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
