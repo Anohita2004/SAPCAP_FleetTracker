@@ -1,22 +1,63 @@
-# Getting Started
+# SAP CAP Fleet Tracker
 
-Welcome to your new CAP project.
+A full-stack SAP CAP fleet tracking application where a Fleet Admin signs in with SAP BTP/XSUAA, creates app-level driver accounts, and visualizes driver trip/location data. Drivers do not need BTP accounts. They log in with app credentials, grant browser/mobile location permission, and send live location updates to the backend.
 
-It contains these folders and files, following our recommended project layout:
+## Overview
 
-File or Folder | Purpose
----------|----------
-`app/` | content for UI frontends goes here
-`db/` | your domain models and data go here
-`srv/` | your service models and code go here
-`readme.md` | this getting started guide
+This project solves a common fleet-management scenario:
 
-## Next Steps
+- Fleet Admins are organization users with SAP BTP accounts.
+- Drivers are field users without SAP BTP accounts.
+- Admins create drivers and assign temporary passwords.
+- Drivers log in through the app, start trips, and share live location.
+- Admins can review drivers, trips, and recorded route points.
 
-- Open a new terminal and run `cds watch`
-- (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
-- Start with your domain model, in a CDS file in `db/`
+## Tech Stack
 
-## Learn More
+- SAP CAP Node.js
+- SAP HANA Cloud / HDI Container for production
+- SQLite for local development
+- SAPUI5 frontend
+- SAP Approuter
+- XSUAA for Fleet Admin authentication
+- App-managed driver sessions for driver login
+- Leaflet / OpenStreetMap for map visualization
 
-Learn more at <https://cap.cloud.sap>.
+## User Roles
+
+### Fleet Admin
+
+Fleet Admins authenticate through SAP BTP/XSUAA.
+
+They can:
+
+- Create driver accounts
+- Assign temporary driver passwords
+- View assigned drivers
+- View trips and recorded locations
+- Review route history
+
+### Driver
+
+Drivers do not need SAP BTP accounts.
+
+They can:
+
+- Log in with app-level email/password
+- Start an active trip
+- Grant browser/mobile location permission
+- Send location points while tracking
+- Stop the active trip
+
+## Authentication Model
+
+This app intentionally uses two authentication flows:
+
+### Admin Authentication
+
+Admin routes use SAP BTP/XSUAA.
+
+Protected backend route prefix:
+
+```text
+/tracker
