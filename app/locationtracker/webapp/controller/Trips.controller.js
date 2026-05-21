@@ -54,6 +54,14 @@ sap.ui.define([
 
       this.getView().getModel("trips").setProperty("/selectedTrip", oContext.getObject());
       this.getView().getModel("trips").setProperty("/fcl/layout", "TwoColumnsMidExpanded");
+
+      // notify map to highlight selected trip (if admin map is visible)
+      try {
+        var trip = oContext.getObject();
+        if (window.__highlightAdminTrip && trip && trip.ID) {
+          window.__highlightAdminTrip(trip.ID);
+        }
+      } catch (e) { /* ignore */ }
     },
 
     onFocusActiveTrip: function () {
@@ -69,6 +77,8 @@ sap.ui.define([
       }
 
       oModel.setProperty("/selectedTrip", oActiveTrip);
+      // notify admin map
+      try { if (window.__highlightAdminTrip) window.__highlightAdminTrip(oActiveTrip.ID); } catch (e) {}
       oModel.setProperty("/fcl/layout", "TwoColumnsMidExpanded");
       MessageToast.show("Active trip selected");
     },
@@ -143,6 +153,13 @@ sap.ui.define([
 
   var oNextTrip = oMatchingTrip || aFilteredTrips[0];
   oModel.setProperty("/selectedTrip", oNextTrip);
+
+  // notify admin map to highlight the selected trip
+  try {
+    if (window.__highlightAdminTrip && oNextTrip && oNextTrip.ID) {
+      window.__highlightAdminTrip(oNextTrip.ID);
+    }
+  } catch (e) { /* ignore */ }
 
   if (oNextTrip && oNextTrip.ID) {
     oModel.setProperty("/fcl/layout", "TwoColumnsMidExpanded");

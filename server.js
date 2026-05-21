@@ -3,6 +3,23 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
 const { SELECT, INSERT, UPDATE } = cds.ql;
+const WebSocket = require("ws");
+const jwt = require("jsonwebtoken");
+const jwksClient = require("jwks-rsa");
+
+// In-memory admin socket registry: adminId -> Set(ws)
+const adminSockets = new Map();
+
+function broadcastToAdmin(adminId, payload) {
+  const set = adminSockets.get(adminId);
+  if (!set) return;
+  const msg = JSON.stringify(payload);
+  for (const ws of set) {
+    if (ws.readyState === WebSocket.OPEN) {
+      ws.send(msg);
+    }
+  }
+}
 
 const normalizeEmail = (email) => String(email || "").trim().toLowerCase();
 
@@ -12,6 +29,7 @@ const hashToken = (token) =>
   crypto.createHash("sha256").update(token).digest("hex");
 
 module.exports = cds.server;
+module.exports.broadcastToAdmin = broadcastToAdmin;
 
 cds.on("bootstrap", (app) => {
   app.use(express.json());
@@ -234,6 +252,26 @@ cds.on("bootstrap", (app) => {
       };
 
       await db.run(INSERT.into("tracker.LocationPoints").entries(entry));
+
+      // Best-effort broadcast to admin dashboards associated with this driver
+      try {
+        const driver = await db.run(SELECT.one.from("tracker.Drivers").where({ ID: trip.driver_ID }));
+        if (driver && driver.admin_ID) {
+          broadcastToAdmin(driver.admin_ID, {
+            type: "location",
+            driverId: driver.ID,
+            tripId: entry.trip_ID,
+            latitude: entry.latitude,
+            longitude: entry.longitude,
+            recordedAt: entry.recordedAt,
+            speed: entry.speed,
+            heading: entry.heading
+          });
+        }
+      } catch (e) {
+        // ignore broadcast errors
+      }
+
       res.json(entry);
     } catch (err) {
       next(err);
@@ -330,6 +368,203 @@ cds.on("bootstrap", (app) => {
   });
 });
 
+// Start WebSocket server attached to the main HTTP server (no separate port)
+const wss = new WebSocket.Server({ noServer: true });
+
+// JWKS configuration (set WS_JWKS_URI and optional WS_AUDIENCE / WS_ISSUER in production)
+const JWKS_URI = process.env.WS_JWKS_URI || process.env.XSUAA_JWKS_URI || null;
+const WS_AUDIENCE = process.env.WS_AUDIENCE || process.env.WS_CLIENT_ID || null;
+const WS_ISSUER = process.env.WS_ISSUER || null;
+let jwksClientInstance = null;
+if (JWKS_URI) {
+  jwksClientInstance = jwksClient({ jwksUri: JWKS_URI, cache: true, rateLimit: true });
+}
+
+function getKey(header, callback) {
+  if (!jwksClientInstance) return callback(new Error('JWKS client not configured'));
+  jwksClientInstance.getSigningKey(header.kid, function (err, key) {
+    if (err) return callback(err);
+    const pubkey = key.getPublicKey();
+    callback(null, pubkey);
+  });
+}
+
+function verifyTokenAsync(token) {
+  return new Promise((resolve, reject) => {
+    try {
+      const decodedHeader = jwt.decode(token, { complete: true });
+      const alg = decodedHeader && decodedHeader.header && decodedHeader.header.alg;
+
+      // HS* tokens (server-signed with WS_SECRET)
+      if (alg && alg.toUpperCase().startsWith('HS')) {
+        const secret = process.env.WS_SECRET;
+        if (!secret) return reject(new Error('WS_SECRET not configured for HS token verification'));
+        try {
+          const payload = jwt.verify(token, secret, { algorithms: ['HS256'] });
+          return resolve(payload);
+        } catch (err) {
+          return reject(err);
+        }
+      }
+
+      // For RS* or ES* tokens, use JWKS if configured
+      if (JWKS_URI) {
+        jwt.verify(token, getKey, { audience: WS_AUDIENCE || undefined, issuer: WS_ISSUER || undefined }, function (err, decoded) {
+          if (err) return reject(err);
+          resolve(decoded);
+        });
+        return;
+      }
+
+      return reject(new Error('Unable to verify token: unsupported alg or JWKS not configured'));
+    } catch (err) {
+      return reject(err);
+    }
+  });
+}
+
+wss.on('connection', async function connection(ws, req, meta) {
+  ws.isAlive = true;
+  ws.on('pong', function () { ws.isAlive = true; });
+
+  // If token was provided in query, meta may include tokenFromQuery
+  const tokenFromQuery = meta && meta.tokenFromQuery;
+  if (tokenFromQuery) {
+    try {
+      const payload = await verifyTokenAsync(tokenFromQuery);
+      const email = payload && (payload.email || payload.user_name || payload.client_id);
+      if (email) {
+        const db = await cds.connect.to('db');
+        const admin = await db.run(SELECT.one.from('tracker.Admins').where({ email: normalizeEmail(email) }));
+        if (admin) {
+          ws.adminId = admin.ID;
+          let set = adminSockets.get(admin.ID);
+          if (!set) { set = new Set(); adminSockets.set(admin.ID, set); }
+          set.add(ws);
+          try { ws.send(JSON.stringify({ type: 'auth', status: 'ok' })); } catch (e) {}
+        } else {
+          try { ws.send(JSON.stringify({ type: 'auth', status: 'failed' })); } catch (e) {}
+          ws.close();
+        }
+      } else {
+        try { ws.send(JSON.stringify({ type: 'auth', status: 'failed' })); } catch (e) {}
+        ws.close();
+      }
+    } catch (err) {
+      try { ws.send(JSON.stringify({ type: 'auth', status: 'failed', error: err.message })); } catch (e) {}
+      ws.close();
+    }
+    return; // done
+  }
+
+  // Fallback: accept an 'auth' message with a token (production) or an adminEmail (development only)
+  ws.once('message', async function incoming(message) {
+    try {
+      const data = JSON.parse(message);
+      if (data && data.type === 'auth') {
+        if (data.token) {
+          // verify token
+          try {
+            const payload = await verifyTokenAsync(data.token);
+            const email = payload && (payload.email || payload.user_name || payload.client_id);
+            if (email) {
+              const db = await cds.connect.to('db');
+              const admin = await db.run(SELECT.one.from('tracker.Admins').where({ email: normalizeEmail(email) }));
+              if (admin) {
+                ws.adminId = admin.ID;
+                let set = adminSockets.get(admin.ID);
+                if (!set) { set = new Set(); adminSockets.set(admin.ID, set); }
+                set.add(ws);
+                try { ws.send(JSON.stringify({ type: 'auth', status: 'ok' })); } catch (e) {}
+                return;
+              }
+            }
+            try { ws.send(JSON.stringify({ type: 'auth', status: 'failed' })); } catch (e) {}
+            ws.close();
+            return;
+          } catch (err) {
+            try { ws.send(JSON.stringify({ type: 'auth', status: 'failed', error: err.message })); } catch (e) {}
+            ws.close();
+            return;
+          }
+        }
+
+        // Non-token auth (legacy): allow only outside production
+        if (process.env.NODE_ENV !== 'production' && data.adminEmail) {
+          try {
+            const db = await cds.connect.to('db');
+            const admin = await db.run(SELECT.one.from('tracker.Admins').where({ email: normalizeEmail(data.adminEmail) }));
+            if (admin) {
+              ws.adminId = admin.ID;
+              let set = adminSockets.get(admin.ID);
+              if (!set) { set = new Set(); adminSockets.set(admin.ID, set); }
+              set.add(ws);
+              try { ws.send(JSON.stringify({ type: 'auth', status: 'ok' })); } catch (e) {}
+              return;
+            }
+          } catch (e) {
+            // fallthrough
+          }
+        }
+      }
+    } catch (err) {
+      // ignore
+    }
+
+    // If not authenticated by now, close connection
+    try { ws.send(JSON.stringify({ type: 'auth', status: 'failed' })); } catch (e) {}
+    ws.close();
+  });
+
+  ws.on('close', function () {
+    if (ws.adminId) {
+      const set = adminSockets.get(ws.adminId);
+      if (set) {
+        set.delete(ws);
+        if (!set.size) adminSockets.delete(ws.adminId);
+      }
+    }
+  });
+});
+
+// Periodic ping to detect dead clients
+setInterval(function ping() {
+  wss.clients.forEach(function each(ws) {
+    if (ws.isAlive === false) return ws.terminate();
+    ws.isAlive = false;
+    ws.ping();
+  });
+}, 30000);
+
 if (require.main === module) {
-  cds.server();
+  const maybeServer = cds.server();
+  Promise.resolve(maybeServer).then((httpServer) => {
+    // cds.server may return an http.Server or an object with .server
+    const server = httpServer && httpServer._server ? httpServer._server : (httpServer && httpServer.server ? httpServer.server : httpServer);
+
+    if (server && typeof server.on === 'function') {
+      server.on('upgrade', function (req, socket, head) {
+        // parse token from query
+        let tokenFromQuery = null;
+        try {
+          const url = new URL(req.url, 'http://localhost');
+          tokenFromQuery = url.searchParams.get('access_token');
+        } catch (e) {
+          tokenFromQuery = null;
+        }
+
+        wss.handleUpgrade(req, socket, head, function done(ws) {
+          // pass tokenFromQuery as meta by emitting connection with third arg
+          wss.emit('connection', ws, req, { tokenFromQuery: tokenFromQuery });
+        });
+      });
+
+      // attach close handler to clean up sockets on server close
+      server.on('close', function () {
+        wss.clients.forEach(function (ws) { try { ws.terminate(); } catch (e) {} });
+      });
+    }
+  }).catch((e) => {
+    // ignore
+  });
 }

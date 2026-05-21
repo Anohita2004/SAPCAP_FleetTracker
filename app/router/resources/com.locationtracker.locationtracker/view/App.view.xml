@@ -110,6 +110,8 @@
 
           <VBox class="mapShell adminMapShell">
             <core:HTML content='&lt;div id="tracker-map" class="trackerMap"&gt;&lt;/div&gt;' />
+            <!-- Map legend overlay -->
+            <core:HTML content='&lt;div id="map-legend" class="mapLegend" aria-hidden="false"&gt;&lt;/div&gt;' />
           </VBox>
         </HBox>
 

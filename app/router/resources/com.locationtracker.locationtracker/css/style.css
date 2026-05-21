@@ -138,6 +138,95 @@ body {
   width: 100%;
   height: 30rem;
   display: block;
+  border-radius: 8px;
+}
+
+/* Map legend (top-right) */
+.mapLegend {
+  position: absolute;
+  right: 1rem;
+  top: 6.5rem;
+  background: rgba(255,255,255,0.95);
+  border: 1px solid var(--border-soft);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(9,30,63,0.12);
+  z-index: 9999;
+  font-size: 0.85rem;
+  color: #34495e;
+  max-width: 240px;
+}
+
+.mapLegend .legendTitle {
+  font-weight: 600;
+  margin-bottom: 0.375rem;
+}
+
+.mapLegend .legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+}
+
+.mapLegend .colorSwatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 2px 6px rgba(10,30,60,0.06) inset;
+}
+
+/* Popup styling */
+.leaflet-container .leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(10,30,60,0.12);
+  padding: 0.5rem 0.75rem;
+}
+
+.leaflet-container .leaflet-popup-content {
+  margin: 0;
+  color: #233040;
+  font-size: 0.9rem;
+}
+
+/* Smooth marker transform for nicer moves */
+.leaflet-marker-icon {
+  transition: transform 300ms linear !important;
+}
+
+/* Highlighted marker class */
+.marker-highlight {
+  transform: scale(1.35) !important;
+  filter: drop-shadow(0 6px 14px rgba(10,30,60,0.25));
+}
+
+/* Driver list improvements */
+.driverRow {
+  padding: 0.75rem;
+  border-radius: 6px;
+  align-items: center;
+}
+
+.driverRow .sapFAvatar {
+  font-weight: 700;
+}
+
+.driverRow .driverName {
+  font-size: 1rem;
+}
+
+.driverRow .driverMeta {
+  font-size: 0.85rem;
+}
+
+/* map container responsive tweaks */
+@media (min-width: 1200px) {
+  .mapLegend { top: 5.25rem; }
+}
+
+@media (max-width: 800px) {
+  .mapLegend { display: none; }
 }
 
 .driverMapMarker {

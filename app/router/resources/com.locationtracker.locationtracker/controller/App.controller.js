@@ -12,9 +12,22 @@ sap.ui.define([
       this._polyline = null;
       this._marker = null;
       this._points = [];
-      this._adminMarkers = [];
+      this._adminMarkers = []; // legacy array used in some places
+      this._adminMarkerMap = {}; // driverId -> Leaflet marker
+      this._adminPolylineMap = {}; // tripId -> Leaflet polyline
+      this._driverColorMap = {};
       this._adminRefreshTimer = null;
+      this._adminSocket = null;
       this._viewModel = this.getOwnerComponent().getModel("view");
+
+      // expose highlight hook for other controllers
+      window.__highlightAdminTrip = this._highlightTrip ? this._highlightTrip.bind(this) : null;
+      // ensure cleanup on exit
+      var originalOnExit = this.onExit.bind(this);
+      this.onExit = function () {
+        try { if (window.__highlightAdminTrip) delete window.__highlightAdminTrip; } catch (e) {}
+        originalOnExit();
+      }.bind(this);
 
       this._viewModel.setProperty("/nav", { active: "home" });
       this._viewModel.setProperty("/showAdminPanel", false);
@@ -279,6 +292,7 @@ sap.ui.define([
           await this._loadDrivers();
           await this._loadAdminTrips();
           this._startAdminAutoRefresh();
+          this._startAdminSocket();
           return;
         }
 
@@ -386,23 +400,185 @@ sap.ui.define([
       this._viewModel.setProperty("/lastRefreshText", "Updated " + new Date().toLocaleTimeString());
     },
 
-    _buildDriverMarkerIcon: function (driverName, active) {
-      var initials = (driverName || "DR")
-        .split(/\s+/)
-        .map(function (part) {
-          return part[0];
-        })
-        .join("")
-        .substring(0, 2)
-        .toUpperCase();
-
-      return window.L.divIcon({
-        className: "driverMapMarker",
-        html: "<span class='" + (active ? "markerLive" : "markerIdle") + "'>" + initials + "</span>",
-        iconSize: [36, 36],
-        iconAnchor: [18, 18]
+    _buildDriverMarkerIcon: function (driverName, active, size) {
+      // size default
+      var s = size || 36;
+      var anchor = Math.round(s/2);
+      var cls = active ? "markerLiveIcon" : "markerIdleIcon";
+      return window.L.icon({
+        iconUrl: "img/truck.svg",
+        iconSize: [s, s],
+        iconAnchor: [anchor, anchor],
+        className: cls
       });
     },
+
+    _startAdminSocket: async function () {
+      if (this._adminSocket) return;
+      try {
+        // Request a short-lived WS token from the backend via CDS action
+        var tokenResponse = null;
+        try {
+          tokenResponse = await this._post('/tracker/issueWsToken', {});
+        } catch (err) {
+          // If action not available or failed, fall back to existing token behavior
+          tokenResponse = null;
+        }
+
+        var token = tokenResponse && tokenResponse.token ? tokenResponse.token : (localStorage.getItem('admin_token') || localStorage.getItem('driver_token') || null);
+
+        var protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
+        var host = window.location.hostname;
+        var port = window.location.port ? (Number(window.location.port) + 2) : 4006; // default WS port 4006
+        var url = protocol + "//" + host + ":" + port + (token ? ('?access_token=' + encodeURIComponent(token)) : '');
+
+        this._adminSocket = new WebSocket(url);
+
+        this._adminSocket.addEventListener('open', function () {
+          // If token wasn't provided via URL, try to send it in an auth message
+          if (!token) {
+            var user = this._viewModel.getProperty('/user') || {};
+            if (localStorage.getItem('admin_token') || localStorage.getItem('driver_token')) {
+              var t = localStorage.getItem('admin_token') || localStorage.getItem('driver_token');
+              this._adminSocket.send(JSON.stringify({ type: 'auth', token: t }));
+              return;
+            }
+
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || !window.location.hostname) {
+              this._adminSocket.send(JSON.stringify({ type: 'auth', adminEmail: user.email }));
+            }
+          }
+        }.bind(this));
+
+        this._adminSocket.addEventListener('message', function (evt) {
+          try {
+            var data = JSON.parse(evt.data);
+            if (data && data.type === 'location') {
+              this._handleRealtimeLocation(data);
+            }
+          } catch (e) {
+            // ignore
+          }
+        }.bind(this));
+
+        this._adminSocket.addEventListener('close', function () {
+          this._adminSocket = null;
+        }.bind(this));
+      } catch (e) {
+        // ignore
+      }
+    },
+
+    _stopAdminSocket: function () {
+      if (this._adminSocket) {
+        try { this._adminSocket.close(); } catch (e) {}
+        this._adminSocket = null;
+      }
+    },
+
+    _handleRealtimeLocation: function (data) {
+      if (!data || !data.driverId) return;
+      var drivers = this._viewModel.getProperty('/drivers') || [];
+      var idx = drivers.findIndex(function (d) { return d.ID === data.driverId; });
+      if (idx !== -1) {
+        drivers[idx].latestLat = data.latitude;
+        drivers[idx].latestLng = data.longitude;
+        drivers[idx].lastSeenText = data.recordedAt ? ('Last update ' + new Date(data.recordedAt).toLocaleTimeString()) : 'Live';
+        drivers[idx].activeTripId = data.tripId || drivers[idx].activeTripId;
+        this._viewModel.setProperty('/drivers', drivers);
+      }
+
+      // update or create marker
+      try {
+        var latLng = [Number(data.latitude), Number(data.longitude)];
+        var driverId = data.driverId;
+        var marker = this._adminMarkerMap[driverId];
+        var driverName = (drivers[idx] && drivers[idx].name) ? drivers[idx].name : 'Driver';
+
+        if (marker && this._map) {
+          marker.setLatLng(latLng);
+          if (marker.getPopup) {
+            marker.setPopupContent('<strong>' + driverName + '</strong><br>' + (data.recordedAt ? new Date(data.recordedAt).toLocaleString() : '-') );
+          }
+        } else if (this._map) {
+          marker = window.L.marker(latLng, { icon: this._buildDriverMarkerIcon(driverName, true, 36) })
+            .addTo(this._map)
+            .bindPopup('<strong>' + driverName + '</strong><br>' + (data.recordedAt ? new Date(data.recordedAt).toLocaleString() : '-'));
+          this._adminMarkerMap[driverId] = marker;
+        }
+
+        // update or create polyline for driver (keyed by tripId)
+        try {
+          var tripKey = data.tripId;
+          var entry = this._adminPolylineMap[tripKey];
+          if (entry && entry.poly && entry.poly.addLatLng) {
+            entry.poly.addLatLng(latLng);
+          } else if (this._map) {
+            // create with driver's color
+            var color = this._getColorForDriver(driverId);
+            var p = window.L.polyline([latLng], { color: color, weight: 4, opacity: 0.9 }).addTo(this._map);
+            this._adminPolylineMap[tripKey] = { poly: p, driverId: driverId };
+          }
+
+          // if this trip is selected, emphasize it
+          var selectedTrip = this._viewModel.getProperty('/selectedAdminTripId');
+          if (selectedTrip && selectedTrip === tripKey) {
+            try { this._adminPolylineMap[tripKey].poly.setStyle({ color: '#ff6600', weight: 6, opacity: 1 }); this._adminPolylineMap[tripKey].poly.bringToFront(); } catch (e) {}
+          } else {
+            // ensure normal style
+            try { this._adminPolylineMap[tripKey].poly.setStyle({ color: this._getColorForDriver(driverId), weight: 4, opacity: 0.9 }); } catch (e) {}
+          }
+        } catch (e) {
+          // ignore polyline errors
+        }
+      } catch (e) {
+        // ignore map errors
+      }
+    },
+
+    _getColorForDriver: function (driverId) {
+      if (!driverId) return '#0a6ed1';
+      if (this._driverColorMap[driverId]) return this._driverColorMap[driverId];
+      var palette = ['#0a6ed1','#1f9e3a','#ff6f61','#8e44ad','#f39c12','#16a085','#34495e','#c0392b'];
+      var hash = 0;
+      for (var i=0;i<driverId.length;i++) { hash = ((hash<<5)-hash) + driverId.charCodeAt(i); hash |= 0; }
+      var color = palette[Math.abs(hash) % palette.length];
+      this._driverColorMap[driverId] = color;
+      return color;
+    },
+
+    _highlightTrip: function (tripId) {
+      // set selectedAdminTripId for other logic
+      this._viewModel.setProperty('/selectedAdminTripId', tripId);
+      Object.keys(this._adminPolylineMap).forEach(function (k) {
+        var entry = this._adminPolylineMap[k];
+        try {
+          if (k === tripId) {
+            entry.poly.setStyle({ color: '#ff6600', weight: 6, opacity: 1 });
+            entry.poly.bringToFront();
+            // enlarge marker for this driver
+            var m = this._adminMarkerMap[entry.driverId];
+            if (m && m.setIcon) {
+              var drivers = this._viewModel.getProperty('/drivers') || [];
+              var d = drivers.find(function(dd){ return dd.ID === entry.driverId; }) || {};
+              m.setIcon(this._buildDriverMarkerIcon(d.name || d.email || 'Driver', true, 48));
+            }
+          } else {
+            var driverColor = this._getColorForDriver(entry.driverId);
+            entry.poly.setStyle({ color: driverColor, weight: 4, opacity: 0.6 });
+            // reset marker size
+            var m2 = this._adminMarkerMap[entry.driverId];
+            if (m2 && m2.setIcon) {
+              var drivers2 = this._viewModel.getProperty('/drivers') || [];
+              var d2 = drivers2.find(function(dd){ return dd.ID === entry.driverId; }) || {};
+              m2.setIcon(this._buildDriverMarkerIcon(d2.name || d2.email || 'Driver', true, 36));
+            }
+          }
+        } catch (e) {}
+      }.bind(this));
+    },
+
+
 
     _renderAdminMarkers: function (activeTrips) {
       this._ensureMap();
@@ -411,10 +587,17 @@ sap.ui.define([
         return;
       }
 
+      // remove old markers
       this._adminMarkers.forEach(function (marker) {
         marker.remove();
       });
       this._adminMarkers = [];
+
+      // remove old polylines
+      Object.keys(this._adminPolylineMap).forEach(function (k) {
+        try { var entry = this._adminPolylineMap[k]; if (entry && entry.poly && entry.poly.remove) entry.poly.remove(); } catch (e) {}
+      }.bind(this));
+      this._adminPolylineMap = {};
 
       var markerPoints = [];
 
@@ -424,27 +607,34 @@ sap.ui.define([
           return;
         }
 
-        var latestPoint = points.slice().sort(function (left, right) {
-          return new Date(right.recordedAt || 0) - new Date(left.recordedAt || 0);
-        })[0];
+        // build full polyline for the trip
+        var latLngs = points.slice().sort(function (left, right) {
+          return new Date(left.recordedAt || 0) - new Date(right.recordedAt || 0);
+        }).map(function (p) { return [Number(p.latitude), Number(p.longitude)]; }).filter(function (ll) { return Number.isFinite(ll[0]) && Number.isFinite(ll[1]); });
 
-        var latLng = [
-          Number(latestPoint.latitude),
-          Number(latestPoint.longitude)
-        ];
+        if (!latLngs.length) return;
 
-        if (!Number.isFinite(latLng[0]) || !Number.isFinite(latLng[1])) {
-          return;
-        }
-
-        markerPoints.push(latLng);
+        var latestPoint = latLngs[latLngs.length - 1];
 
         var driverName = trip.driver && trip.driver.name ? trip.driver.name : "Driver";
         var title = trip.title || "Active trip";
-        var recordedAt = latestPoint.recordedAt ? new Date(latestPoint.recordedAt).toLocaleString() : "-";
+        var recordedAt = (trip.points && trip.points.length && trip.points.slice().sort(function (a,b){return new Date(b.recordedAt||0)-new Date(a.recordedAt||0)})[0].recordedAt) ? new Date(trip.points.slice().sort(function (a,b){return new Date(b.recordedAt||0)-new Date(a.recordedAt||0)})[0].recordedAt).toLocaleString() : "-";
 
-        var marker = window.L.marker(latLng, {
-          icon: this._buildDriverMarkerIcon(driverName, trip.status === "ACTIVE")
+        // create polyline and store it per driver
+        try {
+          var driverId = trip.driver && trip.driver.ID ? trip.driver.ID : (trip.driver_ID || trip.driverId);
+        var color = this._getColorForDriver(driverId);
+        var poly = window.L.polyline(latLngs, { color: color, weight: 4, opacity: 0.9 }).addTo(this._map);
+        var tripId = trip.ID || trip.ID;
+        if (tripId) {
+          this._adminPolylineMap[tripId] = { poly: poly, driverId: driverId };
+        }
+        } catch (e) {
+          // ignore
+        }
+
+        var marker = window.L.marker(latestPoint, {
+          icon: this._buildDriverMarkerIcon(driverName, trip.status === "ACTIVE", 36)
         })
           .addTo(this._map)
           .bindPopup(
@@ -453,7 +643,13 @@ sap.ui.define([
             "Last update: " + recordedAt
           );
 
+        markerPoints.push(latestPoint);
         this._adminMarkers.push(marker);
+        // if admin has selected this trip, highlight it
+        var selected = this._viewModel.getProperty('/selectedAdminTripId');
+        if (selected && (selected === trip.ID)) {
+          try { poly.setStyle({ color: '#ff6600', weight: 6, opacity: 1 }); poly.bringToFront(); } catch (e) {}
+        }
       }.bind(this));
 
       if (markerPoints.length > 1) {

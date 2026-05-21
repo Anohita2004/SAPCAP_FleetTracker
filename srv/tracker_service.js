@@ -1,6 +1,8 @@
 const cds = require("@sap/cds");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 const { SELECT, INSERT, UPDATE } = cds.ql;
+const WS_SECRET = process.env.WS_SECRET || 'dev-local-ws-secret';
 
 module.exports = cds.service.impl(function () {
   const { Admins, Drivers, Trips, LocationPoints } = this.entities;
@@ -225,6 +227,29 @@ module.exports = cds.service.impl(function () {
     };
 
     await INSERT.into(LocationPoints).entries(payload);
+
+    // Best-effort broadcast to admin dashboards in the same process
+    try {
+      const serverModule = require('../server');
+      if (serverModule && typeof serverModule.broadcastToAdmin === 'function') {
+        const adminId = result.driver && result.driver.admin_ID;
+        if (adminId) {
+          serverModule.broadcastToAdmin(adminId, {
+            type: 'location',
+            driverId: result.driver.ID,
+            tripId: tripId,
+            latitude: payload.latitude,
+            longitude: payload.longitude,
+            recordedAt: payload.recordedAt,
+            speed: payload.speed,
+            heading: payload.heading
+          });
+        }
+      }
+    } catch (e) {
+      // ignore
+    }
+
     return payload;
   });
 
@@ -232,5 +257,19 @@ module.exports = cds.service.impl(function () {
     const driver = await requireDriverProfile(req);
     if (!driver) return null;
     return (await getActiveTrip(driver.ID)) || null;
+  });
+
+  // Issue a short-lived WebSocket token for the calling admin (no change to existing login)
+  this.on("issueWsToken", async (req) => {
+    const admin = await ensureAdminProfile(req);
+    if (!admin) return req.reject(403, "Only fleet admins may request a WS token");
+
+    if (!WS_SECRET) return req.reject(500, "WS token signing not configured");
+
+    const payload = { adminId: admin.ID, email: admin.email };
+    const token = jwt.sign(payload, WS_SECRET, { algorithm: 'HS256', expiresIn: '2m' });
+    const expiresAt = new Date(Date.now() + 2 * 60 * 1000).toISOString();
+
+    return { token, expiresAt };
   });
 });
