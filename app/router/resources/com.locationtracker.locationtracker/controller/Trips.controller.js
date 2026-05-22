@@ -189,6 +189,15 @@ sap.ui.define([
     },
 
     _shapeTrip: function (oTrip) {
+      // compute deterministic color per driver id
+      function colorForDriver(driverId) {
+        if (!driverId) return '#0a6ed1';
+        var palette = ['#0a6ed1','#1f9e3a','#ff6f61','#8e44ad','#f39c12','#16a085','#34495e','#c0392b'];
+        var hash = 0;
+        for (var i=0;i<driverId.length;i++) { hash = ((hash<<5)-hash) + driverId.charCodeAt(i); hash |= 0; }
+        return palette[Math.abs(hash) % palette.length];
+      }
+
       var aPoints = (oTrip.points || []).slice().sort(function (oLeft, oRight) {
         return new Date(oRight.recordedAt || 0) - new Date(oLeft.recordedAt || 0);
       });
@@ -201,7 +210,9 @@ sap.ui.define([
       var sStatusText = this._statusToText(oTrip.status);
       var sCoordinateValue = this._buildCoordinateLine(oLatestPoint);
       var sDriverCompact = this._buildDriverCompactLine(oTrip.driver);
-
+      var sDriverId = (oTrip.driver && oTrip.driver.ID) ? oTrip.driver.ID : (oTrip.driver && oTrip.driver.email) || "";
+      var sColor = colorForDriver(String(sDriverId));
+ 
       return {
         ID: oTrip.ID,
         title: oTrip.title || "Untitled Trip",
@@ -224,6 +235,7 @@ sap.ui.define([
         durationShort: sDurationShort,
         pointCount: aPoints.length,
         summaryLine: "Started " + sStartedDisplay + " | " + sDurationText,
+        color: sColor,
         coordinateValue: sCoordinateValue,
         locationLine: this._buildLocationLine(oLatestPoint),
         sourceLine: oLatestPoint ? (oLatestPoint.source || "Unknown source") : "No points recorded yet",

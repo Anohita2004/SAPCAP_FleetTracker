@@ -84,6 +84,7 @@
 
             <CustomListItem type="Active">
               <HBox class="tripListItem" justifyContent="SpaceBetween" alignItems="Center">
+                <core:HTML content="{= '&lt;div style=&quot;width:12px;height:12px;border-radius:3px;margin-right:0.75rem;background:' + ${trips>color} + '&quot;&gt;&lt;/div&gt;' }" />
                 <VBox class="tripListCopy">
                   <HBox alignItems="Center" class="tripListTitleRow">
                     <Title text="{trips>shortTitle}" level="H5" />
@@ -127,7 +128,10 @@
 
             <HBox justifyContent="SpaceBetween" wrap="Wrap" class="tripDetailHeader">
               <VBox>
-                <Title text="{trips>/selectedTrip/title}" level="H3" />
+                <HBox alignItems="Center">
+                  <core:HTML content="{= '&lt;div style=&quot;width:14px;height:14px;border-radius:3px;margin-right:0.5rem;background:' + ${trips>/selectedTrip/color} + '&quot;&gt;&lt;/div&gt;' }" />
+                  <Title text="{trips>/selectedTrip/title}" level="H3" />
+                </HBox>
                 <Text text="{trips>/selectedTrip/detailSubtitle}" class="tripMetaText" />
               </VBox>
 
