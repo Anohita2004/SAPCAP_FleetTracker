@@ -1,0 +1,58 @@
+<mvc:View
+  controllerName="com.locationtracker.locationtracker.controller.DriverDashboard"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  displayBlock="true">
+
+  <Page title="Driver Dashboard">
+    <content>
+      <VBox class="trackerPage">
+        <HBox class="toolbarRow" justifyContent="SpaceBetween" alignItems="Center">
+          <VBox>
+            <Title text="Driver Console" level="H2" />
+            <Text text="Quick actions and live trip details" />
+          </VBox>
+          <HBox class="buttonCluster">
+            <Button text="Start Trip" type="Emphasized" icon="sap-icon://begin" press=".onStartTracking" />
+            <Button text="Stop Trip" type="Reject" icon="sap-icon://stop" press=".onStopTracking" />
+          </HBox>
+        </HBox>
+
+        <HBox class="cardRow driverCards" wrap="Wrap">
+          <Panel headerText="Current Trip" class="metricCard" accessibleName="Current trip">
+            <content>
+              <VBox class="metricContent">
+                <ObjectStatus title="Title" text="{= ${view>/currentTrip/title} || 'No active trip'}" />
+                <ObjectStatus title="Status" text="{= ${view>/currentTrip/status} || 'IDLE'}" />
+                <ObjectStatus title="Started" text="{= ${view>/currentTrip/startedAt} || '-'}" />
+              </VBox>
+            </content>
+          </Panel>
+
+          <Panel headerText="Live Position" class="metricCard">
+            <content>
+              <VBox class="metricContent">
+                <ObjectStatus title="Latitude" text="{= ${view>/lastPoint/latitude} || '-'}" />
+                <ObjectStatus title="Longitude" text="{= ${view>/lastPoint/longitude} || '-'}" />
+                <ObjectStatus title="Accuracy (m)" text="{= ${view>/lastPoint/accuracy} || '-'}" />
+              </VBox>
+            </content>
+          </Panel>
+
+          <Panel headerText="Captured Points" class="metricCard">
+            <content>
+              <VBox class="metricContent">
+                <ObjectNumber number="{= ${view>/totalPoints} || 0 }" unit="pts" />
+              </VBox>
+            </content>
+          </Panel>
+        </HBox>
+
+        <VBox class="mapShell">
+          <core:HTML content='&lt;div id="tracker-map" class="trackerMap"&gt;&lt;/div&gt;' />
+        </VBox>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

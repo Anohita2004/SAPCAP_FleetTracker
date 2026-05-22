@@ -105,6 +105,27 @@ sap.ui.define([
       this.getOwnerComponent().getRouter().navTo("RouteTrips");
     },
 
+    onNavigateToDashboard: function () {
+      var vm = this._viewModel;
+      if (vm.getProperty("/isAdmin")) {
+        this.getOwnerComponent().getRouter().navTo("RouteAdminDashboard");
+        return;
+      }
+
+      if (vm.getProperty("/isDispatcher")) {
+        this.getOwnerComponent().getRouter().navTo("RouteDispatcherDashboard");
+        return;
+      }
+
+      if (vm.getProperty("/isDriver")) {
+        this.getOwnerComponent().getRouter().navTo("RouteDriverDashboard");
+        return;
+      }
+
+      // fallback
+      this.getOwnerComponent().getRouter().navTo("RouteApp");
+    },
+
     onRefreshFleet: async function () {
       await this._loadDrivers();
       await this._loadAdminTrips();
@@ -280,6 +301,7 @@ sap.ui.define([
         this._viewModel.setProperty("/user", user);
         this._viewModel.setProperty("/isAdmin", !!user.isAdmin);
         this._viewModel.setProperty("/isDriver", !!user.isDriver);
+        this._viewModel.setProperty("/isDispatcher", !!user.isDispatcher);
 
         if (user.isDriver) {
           await this._loadActiveTrip();

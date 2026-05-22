@@ -1,0 +1,77 @@
+<mvc:View
+  controllerName="com.locationtracker.locationtracker.controller.AdminDashboard"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  displayBlock="true">
+
+  <Page title="Admin Dashboard - Fleet Overview">
+    <content>
+      <VBox class="trackerPage">
+        <HBox class="toolbarRow" justifyContent="SpaceBetween" alignItems="Center">
+          <VBox>
+            <Title text="Fleet Operations" level="H2" />
+            <Text text="Overview of vehicles, live trips and system health" />
+          </VBox>
+          <HBox class="buttonCluster">
+            <Button text="Refresh" icon="sap-icon://refresh" press=".onRefresh" />
+            <Button text="Create Driver" icon="sap-icon://add-employee" press=".onOpenCreateDriver" visible="{view>/isAdmin}" />
+          </HBox>
+        </HBox>
+
+        <HBox class="cardRow" wrap="Wrap">
+          <Panel headerText="Drivers" class="metricCard">
+            <content>
+              <VBox class="metricContent">
+                <ObjectNumber number="{= ${view>/adminStats/totalDrivers} || 0 }" unit="drivers" />
+                <ObjectStatus text="{= (${view>/adminStats/activeDrivers} || 0) + ' active'}" state="Success" />
+              </VBox>
+            </content>
+          </Panel>
+
+          <Panel headerText="Active Trips" class="metricCard">
+            <content>
+              <VBox class="metricContent">
+                <ObjectNumber number="{= ${view>/adminStats/activeTrips} || 0 }" unit="live" />
+                <ObjectStatus text="Live tracking" state="Information" />
+              </VBox>
+            </content>
+          </Panel>
+
+          <Panel headerText="Completed Trips" class="metricCard">
+            <content>
+              <VBox class="metricContent">
+                <ObjectNumber number="{= ${view>/adminStats/completedTrips} || 0 }" unit="done" />
+                <ObjectStatus text="Trip archive" state="None" />
+              </VBox>
+            </content>
+          </Panel>
+        </HBox>
+
+        <HBox class="adminWorkspace">
+          <Panel headerText="Active Drivers" class="driverListPanel" accessibleName="Active drivers">
+            <content>
+              <List items="{view>/drivers}" noDataText="No drivers" accessibleName="Active drivers list">
+                <CustomListItem>
+                  <HBox class="driverRow" alignItems="Center">
+                    <Avatar initials="{view>initials}" displaySize="XS" class="driverAvatar" />
+                    <VBox class="driverRowText">
+                      <Title level="H4" text="{view>name}" />
+                      <Text text="{view>email}" class="driverMeta" />
+                      <Text text="{view>lastSeenText}" class="driverMeta" />
+                    </VBox>
+                    <ObjectStatus text="{view>status}" state="{view>statusState}" />
+                  </HBox>
+                </CustomListItem>
+              </List>
+            </content>
+          </Panel>
+
+          <VBox class="mapShell adminMapShell">
+            <core:HTML content='&lt;div id="tracker-map" class="trackerMap"&gt;&lt;/div&gt;' />
+          </VBox>
+        </HBox>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

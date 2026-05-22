@@ -61,6 +61,33 @@ body {
   padding: 0.75rem;
 }
 
+/* Make KPI numbers more prominent and improve contrast for accessibility */
+.metricContent .sapMObjectNumber {
+  font-size: 1.8rem;
+  color: #0f2b44;
+}
+
+/* Focus styles for keyboard navigation */
+:focus-visible, button:focus-visible, a:focus-visible, .sapMLIBFocusable:focus-visible {
+  outline: 3px solid rgba(10,110,209,0.18);
+  outline-offset: 2px;
+  box-shadow: 0 6px 18px rgba(10,30,60,0.08);
+}
+
+/* Ensure interactive items have visible focus and sufficient hit area */
+.buttonCluster .sapMBtn, .toolbarRow .sapMBtn {
+  min-width: 3.25rem;
+}
+
+/* Screen-reader only helper */
+.visuallyHidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
 .adminForm {
   gap: 0.75rem;
   padding: 0.75rem;

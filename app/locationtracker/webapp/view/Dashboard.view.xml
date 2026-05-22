@@ -1,0 +1,13 @@
+<mvc:View
+  controllerName="com.locationtracker.locationtracker.controller.Dashboard"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  displayBlock="true">
+  <Page title="Dashboard">
+    <content>
+      <VBox class="trackerPage">
+        <Title text="Redirecting to role dashboard..." level="H3" />
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

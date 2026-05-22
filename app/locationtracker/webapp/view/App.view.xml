@@ -29,6 +29,7 @@
       <OverflowToolbar design="Transparent" class="navBar">
         <Button text="Home" press=".onNavHome" type="Transparent" icon="sap-icon://home" />
         <Button text="Trips" press=".onNavigateToTrips" type="Transparent" icon="sap-icon://map-2" />
+        <Button text="Dashboard" press=".onNavigateToDashboard" type="Transparent" icon="sap-icon://sys-monitor" visible="{= ${view>/isAdmin} || ${view>/isDispatcher} || ${view>/isDriver} }" />
         <Button text="Drivers" press=".onRefreshFleet" type="Transparent" icon="sap-icon://employee" visible="{view>/isAdmin}" />
         <Button icon="sap-icon://add" tooltip="Create Driver" press=".onOpenCreateDriver" type="Emphasized" visible="{view>/isAdmin}" />
         <ToolbarSpacer />

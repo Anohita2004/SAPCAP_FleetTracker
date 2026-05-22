@@ -1,0 +1,66 @@
+<mvc:View
+  controllerName="com.locationtracker.locationtracker.controller.DispatcherDashboard"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  displayBlock="true">
+
+  <Page title="Dispatcher Dashboard">
+    <content>
+      <VBox class="trackerPage">
+        <HBox class="toolbarRow" justifyContent="SpaceBetween" alignItems="Center">
+          <VBox>
+            <Title text="Dispatch Console" level="H2" />
+            <Text text="Assign drivers, monitor planned trips and respond to exceptions" />
+          </VBox>
+          <HBox class="buttonCluster">
+            <Button text="Refresh" icon="sap-icon://refresh" press=".onRefresh" />
+            <Button text="Create Trip" icon="sap-icon://add" press=".onCreateTrip" />
+          </HBox>
+        </HBox>
+
+        <HBox class="cardRow" wrap="Wrap">
+          <Panel headerText="Pending Assignments" class="metricCard">
+            <content>
+              <VBox class="metricContent">
+                <Text text="Quick list of trips awaiting assignment or confirmation" />
+              </VBox>
+            </content>
+          </Panel>
+
+          <Panel headerText="Realtime Alerts" class="metricCard">
+            <content>
+              <VBox class="metricContent">
+                <Text text="Geofence breaches, delays and exceptions will appear here" />
+              </VBox>
+            </content>
+          </Panel>
+        </HBox>
+
+        <HBox class="adminWorkspace">
+          <Panel headerText="Active Trips" class="driverListPanel" accessibleName="Active trips">
+            <content>
+              <List items="{view>/adminTrips}" noDataText="No active trips" accessibleName="Active trips list">
+                <CustomListItem>
+                  <HBox class="tripListItem">
+                    <VBox class="tripListCopy">
+                      <Title level="H4" text="{view>title}" />
+                      <Text text="{view>driver/email}" class="tripMeta" />
+                      <Text text="Started: {= ${view>startedAt} || '-'}" class="tripMeta" />
+                    </VBox>
+                    <Button text="Assign" icon="sap-icon://employee" press=".onAssign" />
+                    <Button text="Track" icon="sap-icon://map-2" press=".onTrack" />
+                  </HBox>
+                </CustomListItem>
+              </List>
+            </content>
+          </Panel>
+
+          <VBox class="mapShell adminMapShell">
+            <core:HTML content='&lt;div id="tracker-map" class="trackerMap"&gt;&lt;/div&gt;' />
+          </VBox>
+        </HBox>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>
