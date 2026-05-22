@@ -17,6 +17,7 @@ sap.ui.define([
         tracking: false,
         user: null,
         isAdmin: false,
+        isDispatcher: false,
         isDriver: false,
         driverDraft: {
           name: "",

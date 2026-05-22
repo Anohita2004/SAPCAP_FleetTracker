@@ -83,6 +83,26 @@
           "target": "TargetApp"
         },
         {
+          "name": "RouteDashboard",
+          "pattern": "dashboard",
+          "target": "TargetDashboard"
+        },
+        {
+          "name": "RouteAdminDashboard",
+          "pattern": "dashboard/admin",
+          "target": "TargetAdminDashboard"
+        },
+        {
+          "name": "RouteDispatcherDashboard",
+          "pattern": "dashboard/dispatcher",
+          "target": "TargetDispatcherDashboard"
+        },
+        {
+          "name": "RouteDriverDashboard",
+          "pattern": "dashboard/driver",
+          "target": "TargetDriverDashboard"
+        },
+        {
           "name": "RouteTrips",
           "pattern": "trips",
           "target": "TargetTrips"
@@ -94,6 +114,18 @@
         },
         "TargetApp": {
           "viewName": "App"
+        },
+        "TargetDashboard": {
+          "viewName": "Dashboard"
+        },
+        "TargetAdminDashboard": {
+          "viewName": "AdminDashboard"
+        },
+        "TargetDispatcherDashboard": {
+          "viewName": "DispatcherDashboard"
+        },
+        "TargetDriverDashboard": {
+          "viewName": "DriverDashboard"
         },
         "TargetTrips": {
           "viewName": "Trips"
