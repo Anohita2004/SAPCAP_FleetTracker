@@ -59,3 +59,22 @@ entity Vehicles : cuid, managed {
     DEACTIVATED;
   } default 'DEACTIVATED';
 }
+
+entity ScheduledReports : cuid, managed {
+  name        : String(120);
+  admin       : Association to Admins;
+  entityName  : String(64); // e.g. "Trips" or "LocationPoints"
+  format      : String(10) enum { CSV; PDF } default 'CSV';
+  filter      : String(1000); // optional JSON filter expression
+  intervalMin : Integer; // run every N minutes
+  lastRun     : Timestamp;
+  nextRun     : Timestamp;
+  enabled     : Boolean default true;
+}
+
+entity ReportDeliveries : cuid, managed {
+  report     : Association to ScheduledReports;
+  generatedAt: Timestamp;
+  format     : String(10);
+  content    : LargeString;
+}

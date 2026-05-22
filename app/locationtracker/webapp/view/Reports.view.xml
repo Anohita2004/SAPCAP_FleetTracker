@@ -1,0 +1,66 @@
+<mvc:View
+  controllerName="com.locationtracker.locationtracker.controller.Reports"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  displayBlock="true">
+
+  <Page title="Reports &amp; Exports">
+    <content>
+      <VBox class="trackerPage">
+        <HBox class="toolbarRow" justifyContent="SpaceBetween" alignItems="Center">
+          <VBox>
+            <Title text="Reports &amp; Exports" level="H2" />
+            <Text text="Schedule recurring exports or generate ad-hoc reports" />
+          </VBox>
+          <HBox class="buttonCluster">
+            <Button text="Refresh" icon="sap-icon://refresh" press=".onRefresh" />
+            <Button text="New Schedule" icon="sap-icon://add" press=".onOpenSchedule" />
+          </HBox>
+        </HBox>
+
+        <Panel headerText="Scheduled Reports" class="metricCard">
+          <content>
+            <List id="scheduledList" items="{view>/scheduledReports}">
+              <CustomListItem>
+                <HBox class="tripListItem" alignItems="Center">
+                  <VBox class="tripListCopy">
+                    <Title level="H4" text="{view>name}" />
+                    <Text text="{view>entityName} - {view>format}" />
+                    <Text text="Next run: {view>nextRun}" class="tripMeta" />
+                  </VBox>
+                  <Button icon="sap-icon://download" press=".onDownload" />
+                  <Button icon="sap-icon://decline" press=".onCancel" />
+                </HBox>
+              </CustomListItem>
+            </List>
+          </content>
+        </Panel>
+
+        <Dialog id="scheduleDialog" title="New Report Schedule">
+          <content>
+            <VBox class="adminForm">
+              <Input id="rName" placeholder="Schedule name" />
+              <Select id="rEntity">
+                <core:Item key="Trips" text="Trips" />
+                <core:Item key="LocationPoints" text="Location Points" />
+                <core:Item key="Drivers" text="Drivers" />
+              </Select>
+              <Select id="rFormat">
+                <core:Item key="CSV" text="CSV" />
+                <core:Item key="PDF" text="PDF" />
+              </Select>
+              <Input id="rInterval" placeholder="Interval minutes" type="Number" />
+            </VBox>
+          </content>
+          <beginButton>
+            <Button text="Create" press=".onCreateSchedule" type="Emphasized" />
+          </beginButton>
+          <endButton>
+            <Button text="Cancel" press=".onCloseSchedule" />
+          </endButton>
+        </Dialog>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

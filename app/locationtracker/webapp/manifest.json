@@ -103,6 +103,11 @@
           "target": "TargetDriverDashboard"
         },
         {
+          "name": "RouteReports",
+          "pattern": "reports",
+          "target": "TargetReports"
+        },
+        {
           "name": "RouteTrips",
           "pattern": "trips",
           "target": "TargetTrips"
@@ -126,6 +131,9 @@
         },
         "TargetDriverDashboard": {
           "viewName": "DriverDashboard"
+        },
+        "TargetReports": {
+          "viewName": "Reports"
         },
         "TargetTrips": {
           "viewName": "Trips"

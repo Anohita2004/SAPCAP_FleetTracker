@@ -48,6 +48,9 @@ service TrackerService @(path : '/tracker') {
   ]
   entity Vehicles as projection on tracker.Vehicles;
 
+  @restrict: [ { grant: '*', to: 'FleetAdmin' } ]
+  entity ScheduledReports as projection on tracker.ScheduledReports;
+
   function me() returns UserContext;
 
   @requires: 'FleetAdmin'
@@ -79,4 +82,22 @@ service TrackerService @(path : '/tracker') {
 
   @requires: 'Driver'
   function activeTrip() returns Trips;
+
+  @requires: 'FleetAdmin'
+  action scheduleReport(
+    name : String,
+    entityName : String,
+    format : String,
+    filter : String,
+    intervalMin : Integer
+  ) returns ScheduledReports;
+
+  @requires: 'FleetAdmin'
+  action listScheduledReports() returns ScheduledReports;
+
+  @requires: 'FleetAdmin'
+  action cancelScheduledReport(reportId : UUID) returns Boolean;
+
+  @requires: 'FleetAdmin'
+  action generateReport(reportId : UUID) returns String; // base64 (PDF) or CSV string
 }

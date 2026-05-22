@@ -55,6 +55,7 @@
             <Button text="Refresh Path" icon="sap-icon://refresh" press=".onRefreshPath" visible="{view>/isDriver}" />
             <Button text="Refresh Fleet" icon="sap-icon://refresh" press=".onRefreshFleet" visible="{view>/isAdmin}" />
             <Button text="View Trips" icon="sap-icon://list" press=".onNavigateToTrips" />
+            <Button text="Reports" icon="sap-icon://download" press=".onNavigateToReports" visible="{view>/isAdmin}" />
           </HBox>
         </HBox>
 

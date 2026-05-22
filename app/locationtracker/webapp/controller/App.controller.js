@@ -105,6 +105,10 @@ sap.ui.define([
       this.getOwnerComponent().getRouter().navTo("RouteTrips");
     },
 
+    onNavigateToReports: function () {
+      this.getOwnerComponent().getRouter().navTo("RouteReports");
+    },
+
     onNavigateToDashboard: function () {
       var vm = this._viewModel;
       if (vm.getProperty("/isAdmin")) {
@@ -449,10 +453,10 @@ sap.ui.define([
 
         var token = tokenResponse && tokenResponse.token ? tokenResponse.token : (localStorage.getItem('admin_token') || localStorage.getItem('driver_token') || null);
 
+        // Use same-origin websocket (switch protocol to wss/ws and keep host[:port])
         var protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
-        var host = window.location.hostname;
-        var port = window.location.port ? (Number(window.location.port) + 2) : 4006; // default WS port 4006
-        var url = protocol + "//" + host + ":" + port + (token ? ('?access_token=' + encodeURIComponent(token)) : '');
+        var host = window.location.host; // includes port when present
+        var url = protocol + "//" + host + (token ? ('?access_token=' + encodeURIComponent(token)) : '');
 
         this._adminSocket = new WebSocket(url);
 

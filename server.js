@@ -31,6 +31,73 @@ const hashToken = (token) =>
 module.exports = cds.server;
 module.exports.broadcastToAdmin = broadcastToAdmin;
 
+// Simple report scheduler: check every minute for scheduled reports to run
+async function runScheduledReports() {
+  try {
+    const db = await cds.connect.to('db');
+    const now = new Date().toISOString();
+    const reports = await db.run(SELECT.from('tracker.ScheduledReports').where({ enabled: true }).and(`nextRun <= '${now}'`));
+    for (const rep of reports) {
+      try {
+        // fetch admin to ensure scope
+        const admin = await db.run(SELECT.one.from('tracker.Admins').where({ ID: rep.admin_ID }));
+        if (!admin) continue;
+
+        let rows = [];
+        if (rep.entityName === 'Trips') {
+          rows = await db.run(SELECT.from('tracker.Trips').where({ 'driver.admin_ID': admin.ID }).orderBy('startedAt desc'));
+        } else if (rep.entityName === 'LocationPoints') {
+          rows = await db.run(SELECT.from('tracker.LocationPoints').where({ 'trip.driver.admin_ID': admin.ID }).orderBy('recordedAt desc'));
+        } else if (rep.entityName === 'Drivers') {
+          rows = await db.run(SELECT.from('tracker.Drivers').where({ admin_ID: admin.ID }).orderBy('name asc'));
+        } else {
+          continue;
+        }
+
+        let content = null;
+        if (rep.format === 'PDF') {
+          const PDFDocument = require('pdfkit');
+          const doc = new PDFDocument({ size: 'A4', margin: 36 });
+          const pass = doc.pipe(new require('stream').PassThrough());
+          doc.fontSize(14).text(rep.name || 'Report', { underline: true });
+          doc.moveDown(0.5);
+          doc.fontSize(9);
+          rows.forEach((r) => { doc.text(JSON.stringify(r)); doc.moveDown(0.1); });
+          doc.end();
+          const buffer = await streamToBuffer(pass);
+          content = buffer.toString('base64');
+        } else {
+          const headers = rows.length ? Object.keys(rows[0]).filter(k => k !== '_timestamps' && k !== '__metadata') : [];
+          const csvLines = [headers.join(',')];
+          rows.forEach(r => {
+            const vals = headers.map(h => { const v = r[h]; if (v == null) return ''; return String(v).replace(/"/g, '""'); });
+            csvLines.push('"' + vals.join('","') + '"');
+          });
+          content = csvLines.join('\n');
+        }
+
+        // persist delivery
+        await db.run(INSERT.into('tracker.ReportDeliveries').entries({
+          ID: cds.utils.uuid(),
+          report_ID: rep.ID,
+          generatedAt: new Date().toISOString(),
+          format: rep.format,
+          content: content
+        }));
+
+        // update report schedule
+        await db.run(UPDATE('tracker.ScheduledReports').set({ lastRun: new Date().toISOString(), nextRun: new Date(Date.now() + (rep.intervalMin || 60) * 60 * 1000).toISOString() }).where({ ID: rep.ID }));
+      } catch (e) {
+        console.error('Scheduled report failed', rep.ID, e && e.message);
+      }
+    }
+  } catch (err) {
+    console.error('Report scheduler error', err && err.message);
+  }
+}
+
+setInterval(runScheduledReports, 60 * 1000); // run every minute
+
 cds.on("bootstrap", (app) => {
   app.use(express.json());
 

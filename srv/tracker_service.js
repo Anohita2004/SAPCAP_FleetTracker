@@ -4,6 +4,14 @@ const jwt = require("jsonwebtoken");
 const { SELECT, INSERT, UPDATE } = cds.ql;
 const WS_SECRET = process.env.WS_SECRET || 'dev-local-ws-secret';
 
+const PDFDocument = require('pdfkit');
+const streamToBuffer = (stream) => new Promise((resolve, reject) => {
+  const chunks = [];
+  stream.on('data', (c) => chunks.push(c));
+  stream.on('end', () => resolve(Buffer.concat(chunks)));
+  stream.on('error', (err) => reject(err));
+});
+
 module.exports = cds.service.impl(function () {
   const { Admins, Drivers, Trips, LocationPoints } = this.entities;
 
@@ -271,5 +279,114 @@ module.exports = cds.service.impl(function () {
     const expiresAt = new Date(Date.now() + 2 * 60 * 1000).toISOString();
 
     return { token, expiresAt };
+  });
+
+  // Reporting actions
+  this.on('scheduleReport', async (req) => {
+    const admin = await ensureAdminProfile(req);
+    if (!admin) return req.reject(403, 'Only fleet admins may schedule reports');
+
+    const data = req.data || {};
+    if (!data.name || !data.entityName) return req.reject(400, 'name and entityName required');
+    const interval = Number(data.intervalMin) || 60;
+
+    const entry = {
+      ID: cds.utils.uuid(),
+      name: data.name,
+      admin_ID: admin.ID,
+      entityName: data.entityName,
+      format: data.format === 'PDF' ? 'PDF' : 'CSV',
+      filter: data.filter || null,
+      intervalMin: interval,
+      lastRun: null,
+      nextRun: new Date(Date.now() + interval * 60 * 1000).toISOString(),
+      enabled: true
+    };
+
+    await INSERT.into('tracker.ScheduledReports').entries(entry);
+    return entry;
+  });
+
+  this.on('listScheduledReports', async (req) => {
+    const admin = await ensureAdminProfile(req);
+    if (!admin) return req.reject(403, 'Only fleet admins may list reports');
+
+    const rows = await SELECT.from('tracker.ScheduledReports').where({ admin_ID: admin.ID });
+    return rows;
+  });
+
+  this.on('cancelScheduledReport', async (req) => {
+    const admin = await ensureAdminProfile(req);
+    if (!admin) return req.reject(403, 'Only fleet admins may cancel reports');
+
+    const id = req.data.reportId;
+    if (!id) return req.reject(400, 'reportId required');
+
+    await UPDATE('tracker.ScheduledReports').set({ enabled: false }).where({ ID: id, admin_ID: admin.ID });
+    return true;
+  });
+
+  this.on('generateReport', async (req) => {
+    const admin = await ensureAdminProfile(req);
+    if (!admin) return req.reject(403, 'Only fleet admins may generate reports');
+
+    const id = req.data.reportId;
+    if (!id) return req.reject(400, 'reportId required');
+
+    const rep = await SELECT.one.from('tracker.ScheduledReports').where({ ID: id, admin_ID: admin.ID });
+    if (!rep) return req.reject(404, 'Report not found');
+
+    // Build query based on entityName
+    let rows = [];
+    if (rep.entityName === 'Trips') {
+      rows = await SELECT.from('tracker.Trips').where({ 'driver.admin_ID': admin.ID }).orderBy('startedAt desc');
+    } else if (rep.entityName === 'LocationPoints') {
+      rows = await SELECT.from('tracker.LocationPoints').where({ 'trip.driver.admin_ID': admin.ID }).orderBy('recordedAt desc');
+    } else if (rep.entityName === 'Drivers') {
+      rows = await SELECT.from('tracker.Drivers').where({ admin_ID: admin.ID }).orderBy('name asc');
+    } else {
+      return req.reject(400, 'Unsupported entityName');
+    }
+
+    if (rep.format === 'PDF') {
+      const doc = new PDFDocument({ size: 'A4', margin: 36 });
+      const pass = doc.pipe(new require('stream').PassThrough());
+
+      doc.fontSize(16).text(rep.name || 'Report', { underline: true });
+      doc.moveDown(0.5);
+
+      // Simple tabular layout
+      doc.fontSize(10);
+      rows.forEach((r, idx) => {
+        doc.text(JSON.stringify(r), { continued: false });
+        if (idx < rows.length - 1) doc.moveDown(0.1);
+      });
+
+      doc.end();
+      const buf = await streamToBuffer(pass);
+      // update lastRun/nextRun
+      await UPDATE('tracker.ScheduledReports').set({ lastRun: new Date().toISOString(), nextRun: new Date(Date.now() + (rep.intervalMin || 60) * 60 * 1000).toISOString() }).where({ ID: rep.ID });
+      return buf.toString('base64');
+    }
+
+    // CSV
+    if (rep.format === 'CSV') {
+      // infer headers from first row
+      const headers = rows.length ? Object.keys(rows[0]).filter(k => k !== '_timestamps' && k !== '__metadata') : [];
+      const csvLines = [headers.join(',')];
+      rows.forEach(r => {
+        const vals = headers.map(h => {
+          const v = r[h];
+          if (v == null) return '';
+          return String(v).replace(/"/g, '""');
+        });
+        csvLines.push('"' + vals.join('","') + '"');
+      });
+
+      await UPDATE('tracker.ScheduledReports').set({ lastRun: new Date().toISOString(), nextRun: new Date(Date.now() + (rep.intervalMin || 60) * 60 * 1000).toISOString() }).where({ ID: rep.ID });
+      return csvLines.join('\n');
+    }
+
+    return req.reject(400, 'Unsupported format');
   });
 });
