@@ -46,6 +46,15 @@
             placeholder="Search trips, drivers..."
             liveChange=".onSearchTrips" />
 
+          <DatePicker
+            id="tripDatePicker"
+            displayFormat="dd.MM.yyyy"
+            value="{trips>/selectedDateDisplay}"
+            change=".onDateChange"
+            placeholder="Filter by date" />
+
+          <Button icon="sap-icon://decline" press=".onClearDate" tooltip="Clear date filter" />
+
           <SegmentedButton selectedKey="{trips>/statusFilter}" selectionChange=".onFilterStatus">
             <items>
               <SegmentedButtonItem key="ALL" text="All" />

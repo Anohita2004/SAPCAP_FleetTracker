@@ -11,6 +11,8 @@ sap.ui.define([
       var oTripsModel = new JSONModel({
         loading: false,
         trips: [],
+        selectedDate: null,
+        selectedDateDisplay: "",
         filteredTrips: [],
         selectedTrip: {},
         query: "",
@@ -32,6 +34,36 @@ sap.ui.define([
 
     onRefreshTrips: function () {
       this._loadTrips(true);
+    },
+
+    onDateChange: function (oEvent) {
+      var oModel = this.getView().getModel('trips');
+      var oDP = oEvent.getSource();
+      var oDate = oDP.getDateValue();
+
+      if (!oDate) {
+        oModel.setProperty('/selectedDate', null);
+        oModel.setProperty('/selectedDateDisplay', '');
+      } else {
+        // normalize to yyyy-mm-dd
+        var sIso = oDate.toISOString().slice(0,10);
+        oModel.setProperty('/selectedDate', sIso);
+        oModel.setProperty('/selectedDateDisplay', oDP.getValue() || sIso);
+      }
+
+      this._applyFilters();
+    },
+
+    onClearDate: function () {
+      var oModel = this.getView().getModel('trips');
+      var oDP = this.byId('tripDatePicker');
+      if (oDP) {
+        oDP.setDateValue(null);
+        oDP.setValue('');
+      }
+      oModel.setProperty('/selectedDate', null);
+      oModel.setProperty('/selectedDateDisplay', '');
+      this._applyFilters();
     },
 
     onSearchTrips: function (oEvent) {
@@ -120,6 +152,7 @@ sap.ui.define([
     _applyFilters: function () {
   var oModel = this.getView().getModel("trips");
   var aTrips = oModel.getProperty("/trips") || [];
+  var sSelectedDate = oModel.getProperty('/selectedDate');
   var sQuery = (oModel.getProperty("/query") || "").toLowerCase().trim();
   var sStatusFilter = oModel.getProperty("/statusFilter");
 
@@ -133,6 +166,31 @@ sap.ui.define([
       sTitle.indexOf(sQuery) > -1 ||
       sStatus.indexOf(sQuery) > -1 ||
       sDriver.indexOf(sQuery) > -1;
+
+    // apply selected date filter if set: match trip startedAt date OR any point recordedAt date
+    if (sSelectedDate) {
+      var bMatchesDate = false;
+
+      if (oTrip.startedAt) {
+        var d = new Date(oTrip.startedAt);
+        var s = d.toISOString().slice(0,10);
+        if (s === sSelectedDate) { bMatchesDate = true; }
+      }
+
+      if (!bMatchesDate && oTrip.points && oTrip.points.length) {
+        for (var i=0;i<oTrip.points.length;i++) {
+          var p = oTrip.points[i];
+          if (p && p.recordedAt) {
+            var ds = new Date(p.recordedAt).toISOString().slice(0,10);
+            if (ds === sSelectedDate) { bMatchesDate = true; break; }
+          }
+        }
+      }
+
+      if (!bMatchesDate) {
+        return false;
+      }
+    }
 
     return bMatchesStatus && bMatchesQuery;
   });
